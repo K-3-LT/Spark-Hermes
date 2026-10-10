@@ -48,6 +48,7 @@ from sh.exports.upload import upload as upload_exports
 from sh.scoring.crown import crown as crown_rule
 from sh.validator import similarity
 from sh.validator.copies import assess_round as assess_copies
+from sh.validator.progress import round_bests, tasks_view
 from sh.validator.round import close as close_round
 from sh.validator.stats import load_episodes
 from sh.web.build import render as render_leaderboard
@@ -1009,7 +1010,8 @@ def _progress(cfg: Config, remote: str, total: int) -> dict:
         "    s['n'] += 1; s['verified'] += bool(e.get('verified_success'))\n"
         "    s['credit'] += c\n"
         "    s['tasks'][p.split('/')[-2]] = {'credit': round(c, 4), 'verified': bool(e.get('verified_success')),\n"
-        "                                    'void': bool(e.get('void')), 'dq': bool(e.get('disqualified'))}\n"
+        "                                    'void': bool(e.get('void')), 'dq': bool(e.get('disqualified')),\n"
+        "                                    'tests': len((e.get('detail') or {}).get('broken') or {}) or None}\n"
         "print(json.dumps(out))\n"
     )
     raw = _worker(cfg, f'python3 -c "$(echo {base64.b64encode(script.encode()).decode()} | base64 -d)"')
@@ -1019,7 +1021,8 @@ def _progress(cfg: Config, remote: str, total: int) -> dict:
         by = {}
     for v in by.values():
         v["credit"] = round(v["credit"] / v["n"], 4) if v["n"] else None
-    return {"done": sum(v["n"] for v in by.values()), "total": total, "by_surface": by}
+    # per bug, the highest credit any miner has reached so far this round (logged as progress.best in live.json)
+    return {"done": sum(v["n"] for v in by.values()), "total": total, "by_surface": by, "best": round_bests(by)}
 
 
 def evaluate(cfg: Config, rd: Path, sealed: dict) -> None:
@@ -1202,6 +1205,8 @@ def close(cfg: Config, round_id: str, rd: Path) -> dict:
         rd, pooled, rd / "close", reveal_dir=rd / "withheld", era=cfg.era, window=window, copies=copies
     )
     (rd / "close" / "copies.json").write_text(json.dumps(copies, indent=1))
+    bests = round_bests(tasks_view(load_episodes(rd / "episodes"), round_id))  # the round's final bests, per bug
+    (rd / "close" / "bests.json").write_text(json.dumps({"round_id": round_id, "bests": bests}, indent=1))
     # A family FamilyStats.retirement() has already flagged (in_rotation=False) is written to close.json but
     # never surfaced while the loop runs — an operator only sees it by reading JSON after the fact. Log it now,
     # once per close, so a collapsed or retired family is visible immediately, not discovered days later.
