@@ -263,8 +263,10 @@
       const credit = r.n ? (r.credit != null ? r.credit : r.verified / r.n) : null;
       return { s, r, d, credit, rank: cr && cr.rank, dq: Object.values(r.tasks || {}).some((t) => t.dq) };
     });
-    // order: the crown's ranks once decided, otherwise the live gain; the baseline sits where its own score puts it
-    const key = (x) => x.rank ? -1e6 + x.rank : x.s === "null" ? -(x.credit ?? -1) * 1e3 + 0.0001 : -(x.credit ?? -1) * 1e3;
+    // order: the crown's ranks once decided, otherwise the live gain over the baseline (delta, what the crown ranks
+    // by); the baseline sits at a gain of zero, just below a strategy that ties it; no paired episode yet goes last
+    const gain = (x) => x.s === "null" ? 0 : x.s === "canon" ? paired(x.r.tasks, base) : x.d;
+    const key = (x) => x.rank ? -1e6 + x.rank : gain(x) == null ? 1e6 : -gain(x) * 1e3 + (x.s === "null" ? 0.0001 : 0);
     rows.sort((a, b) => key(a) - key(b) || a.s.localeCompare(b.s));
     let pos = 0;
     const kingNow = crown && crown.king;
