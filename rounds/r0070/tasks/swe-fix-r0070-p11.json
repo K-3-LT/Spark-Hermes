@@ -1,0 +1,29 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0070-p11",
+ "round_id": "r0070",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nAS keyword handling breaks for subqueries and CTEs\n\nDescription\n\nRepro:\nWhen using the AS keyword with a subquery or CTE, the parser fails to correctly handle the expression.\n\nExample:\n```sql\n-- This fails to parse correctly\nCREATE TABLE new_table AS (SELECT * FROM old_table)\n\n-- This also fails\nWITH cte AS (SELECT * FROM table) SELECT * FROM cte\n\n-- Even simple cases like this fail\nSELECT foo AS (SELECT 1)\n```\n\nThe issue appears to be in the handling of what tokens are considered valid after the AS keyword. The current implementation doesn't properly recognize subqueries and CTEs as valid tokens following the AS keyword.\n\nLooking at the code, the problem seems to be in the `valid_next` function in the `group_as` method, which is too restrictive about what can follow an AS keyword. It's not properly handling parenthesized expressions that contain subqueries or CTEs.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "andialbrecht__sqlparse.e57923b3.lm_rewrite__7yld3u8x",
+  "environment": "jyangballin/swesmith.x86_64.andialbrecht_1776_sqlparse.e57923b3",
+  "fail_to_pass": [
+   "tests/test_grouping.py::test_grouping_alias_ctas",
+   "tests/test_grouping.py::test_grouping_as_cte",
+   "tests/test_grouping.py::test_grouping_identifier_as_invalid",
+   "tests/test_regressions.py::test_comment_between_cte_clauses_issue632",
+   "tests/test_regressions.py::test_issue227_gettype_cte"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

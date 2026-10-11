@@ -1,0 +1,28 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0070-p23",
+ "round_id": "r0070",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nSnowflake datetime function parsing fails with AttributeError\n\n#### Description\n\nWhen parsing certain Snowflake datetime functions, the parser raises an `AttributeError` due to incorrect null checking order in the `_build_datetime` function. The error occurs when trying to access attributes on `None` values.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlglot\nfrom sqlglot import parse_one\n\n# This will raise AttributeError: 'NoneType' object has no attribute 'name'\nsql = \"SELECT TO_TIMESTAMP(NULL)\"\ntry:\n    result = parse_one(sql, dialect=\"snowflake\")\n    print(\"Parsed successfully:\", result)\nexcept AttributeError as e:\n    print(\"Error:\", e)\n\n# Another example that fails\nsql2 = \"SELECT TO_DATE(NULL, 'YYYY-MM-DD')\"\ntry:\n    result = parse_one(sql2, dialect=\"snowflake\")\n    print(\"Parsed successfully:\", result)\nexcept AttributeError as e:\n    print(\"Error:\", e)\n```\n\nExpected output: The SQL should parse successfully without errors.\nActual output: `AttributeError: 'NoneType' object has no attribute 'name'` or `AttributeError: 'NoneType' object has no attribute 'is_int'`\n\nThe issue appears to be in the Snowflake dialect's datetime function parsing logic where null checks are performed after trying to access object attributes.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.func_pm_op_swap__3xemq367",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/dialects/test_snowflake.py::TestSnowflake::test_ddl",
+   "tests/dialects/test_snowflake.py::TestSnowflake::test_from_changes",
+   "tests/dialects/test_snowflake.py::TestSnowflake::test_snowflake",
+   "tests/dialects/test_snowflake.py::TestSnowflake::test_timestamps"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

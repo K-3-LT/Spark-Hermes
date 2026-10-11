@@ -1,0 +1,28 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0070-p03",
+ "round_id": "r0070",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nUnboundLocalError in merge_subqueries optimizer when renaming inner sources\n\n#### Description\n\nThe merge_subqueries optimizer is throwing an `UnboundLocalError` when trying to access variables that are referenced before assignment. This appears to be related to the variable scoping in the `_rename_inner_sources` function.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlglot\nfrom sqlglot import optimizer\n\n# This will trigger the error during optimization\nsql = \"\"\"\nSELECT * FROM (\n    SELECT a, b FROM table1 t1\n) sub\nJOIN table2 t2 ON sub.a = t2.a\n\"\"\"\n\n# Try to optimize with merge_subqueries\noptimized = optimizer.optimize(sql, rules=[\n    optimizer.qualify_tables.qualify_tables,\n    optimizer.qualify_columns.qualify_columns, \n    optimizer.merge_subqueries.merge_subqueries\n])\n```\n\nThe error occurs when the optimizer tries to merge subqueries and needs to rename conflicting source names between the outer and inner scopes.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.func_pm_ctrl_shuffle__zrquib28",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/test_optimizer.py::TestOptimizer::test_merge_subqueries",
+   "tests/test_optimizer.py::TestOptimizer::test_optimize",
+   "tests/test_optimizer.py::TestOptimizer::test_tpcds",
+   "tests/test_optimizer.py::TestOptimizer::test_tpch"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0070-p12",
+ "round_id": "r0070",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n# attr.Factory not recognized in attrs package\n\nI found an issue with the attrs package integration. When using `attr.Factory` to create default values for attributes, astroid doesn't recognize it properly.\n\nHere's a simple reproduction:\n\n```python\nimport attr\n\n@attr.s\nclass Foo:\n    d = attr.ib(attr.Factory(dict))\n\nf = Foo()\nf.d['answer'] = 42  # This should work, but astroid can't infer the type\n```\n\nThe same issue happens with different ways of using attrs:\n\n```python\nfrom attr import attrs, attrib\n\n@attrs\nclass Bah:\n    d = attrib(attr.Factory(dict))\n\nh = Bah()\nh.d['answer'] = 42  # Same problem here\n```\n\nAnd with the newer API:\n\n```python\n@attr.define\nclass Spam:\n    d = attr.field(default=attr.Factory(dict))\n\nj = Spam()\nj.d['answer'] = 42  # Still can't infer the type\n```\n\nIt seems like `attr.Factory` is not included in the list of recognized attrs names, which causes astroid to fail to properly infer the type of the attribute.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "pylint-dev__astroid.b114f6b5.pr_2126",
+  "environment": "jyangballin/swesmith.x86_64.pylint-dev_1776_astroid.b114f6b5",
+  "fail_to_pass": [
+   "tests/brain/test_attr.py::AttrsTest::test_attr_transform"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

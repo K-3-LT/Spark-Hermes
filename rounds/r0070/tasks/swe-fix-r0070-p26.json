@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0070-p26",
+ "round_id": "r0070",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nInterval parsing incorrectly handles string literals with units\n\nWhen parsing interval expressions that contain string literals followed by units, the parser incorrectly retreats the index, causing parsing errors or unexpected behavior.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlglot\n\n# This should parse correctly but fails\nsql = \"SELECT INTERVAL '1 day' + INTERVAL '2 hours'\"\nresult = sqlglot.parse_one(sql, dialect='snowflake')\nprint(result)\n\n# Another example that demonstrates the issue\nsql2 = \"SELECT CURRENT_TIMESTAMP - INTERVAL '1 week'\"\nresult2 = sqlglot.parse_one(sql2, dialect='snowflake')\nprint(result2)\n```\n\nThe issue occurs when the parser encounters interval expressions where a string literal is followed by a time unit. The parser's retreat mechanism is moving in the wrong direction, causing it to skip or misinterpret tokens.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.func_pm_op_change__h3rsd3qt",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/dialects/test_postgres.py::TestPostgres::test_postgres",
+   "tests/dialects/test_snowflake.py::TestSnowflake::test_snowflake"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

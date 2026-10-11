@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0070-p14",
+ "round_id": "r0070",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nDate extraction fails for nested Cast/TsOrDsToDate expressions\n\n#### Description\n\nWhen using nested Cast or TsOrDsToDate expressions, the date extraction logic returns None instead of properly extracting the date value from the inner expression.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlglot\nfrom sqlglot import exp\nfrom sqlglot.optimizer.simplify import extract_date\n\n# Create a nested cast expression\ninner_cast = exp.Cast(this=exp.Literal.string(\"2023-01-01\"), to=exp.DataType.build(\"DATE\"))\nouter_cast = exp.Cast(this=inner_cast, to=exp.DataType.build(\"TIMESTAMP\"))\n\n# This should extract the date but returns None\nresult = extract_date(outer_cast)\nprint(f\"Result: {result}\")  # Expected: datetime.date(2023, 1, 1), Actual: None\n\n# Similar issue with TsOrDsToDate\nts_to_date = exp.TsOrDsToDate(this=exp.Literal.string(\"2023-01-01\"))\nnested_cast = exp.Cast(this=ts_to_date, to=exp.DataType.build(\"TIMESTAMP\"))\n\nresult2 = extract_date(nested_cast)\nprint(f\"Result2: {result2}\")  # Expected: datetime.date(2023, 1, 1), Actual: None\n```\n\nThe issue appears to affect SQL optimization where date literals in nested cast expressions are not being properly recognized, potentially impacting query simplification and optimization.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.func_pm_ctrl_invert_if__fjchgbq1",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/test_optimizer.py::TestOptimizer::test_simplify"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

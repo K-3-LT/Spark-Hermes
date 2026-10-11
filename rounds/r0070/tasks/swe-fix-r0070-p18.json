@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0070-p18",
+ "round_id": "r0070",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nSection iterator returns content before variables are defined\n\n#### Description\n\nWhen iterating over section content using `iter_inner_content()`, the method attempts to use variables before they are defined, causing a `NameError`.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom docx import Document\n\n# Load a document with multiple sections\ndocument = Document('multi_section_document.docx')\n\n# Try to iterate over the first section's content\nfor content in document.sections[0].iter_inner_content():\n    print(content)\n```\n\nThis will raise:\n```\nNameError: name 'sectPr' is not defined\n```\n\nThe issue occurs when trying to access section content where the code references `sectPr` and `n_blks_to_skip` before these variables are properly initialized in the method.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.func_pm_ctrl_shuffle__mkazqvce",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/test_section.py::DescribeSection::it_can_iterate_its_inner_content"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}
