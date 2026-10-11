@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791682499.9924362,
+ "updated": 1791682873.9145672,
  "round_id": "r0069",
  "stage": "evaluate",
  "stages": [
@@ -12497,7 +12497,7 @@
  },
  "rejected": {},
  "progress": {
-  "done": 23,
+  "done": 26,
   "total": 80,
   "by_surface": {
    "null": {
@@ -12627,7 +12627,7 @@
     }
    },
    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
-    "n": 7,
+    "n": 8,
     "verified": 3,
     "credit": 0.5,
     "tasks": {
@@ -12673,12 +12673,40 @@
       "dq": false,
       "tests": 3
      },
+     "swe-fix-r0069-23": {
+      "credit": 0.5,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 2
+     },
      "swe-fix-r0069-24": {
       "credit": 0.0,
       "verified": false,
       "void": false,
       "dq": false,
       "tests": 3
+     }
+    }
+   },
+   "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
+    "n": 2,
+    "verified": 1,
+    "credit": 0.75,
+    "tasks": {
+     "swe-fix-r0069-05": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": 3
+     },
+     "swe-fix-r0069-06": {
+      "credit": 0.5,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 2
      }
     }
    }
@@ -12688,6 +12716,7 @@
     "credit": 1.0,
     "by": [
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
      "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
     ],
     "fixed": 3,
@@ -12698,6 +12727,7 @@
     "credit": 0.5,
     "by": [
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
      "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
     ],
     "fixed": 1,
@@ -12746,7 +12776,8 @@
    "swe-fix-r0069-23": {
     "credit": 0.5,
     "by": [
-     "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK"
+     "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+     "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
     ],
     "fixed": 1,
     "tests": 2,
