@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791750137.8718004,
+ "updated": 1791750889.671165,
  "round_id": "r0070",
  "stage": "evaluate",
  "stages": [
@@ -693,13 +693,13 @@
  },
  "rejected": {},
  "progress": {
-  "done": 82,
+  "done": 84,
   "total": 88,
   "by_surface": {
    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
-    "n": 5,
-    "verified": 5,
-    "credit": 0.9438,
+    "n": 6,
+    "verified": 6,
+    "credit": 0.9451,
     "tasks": {
      "swe-fix-r0070-03": {
       "credit": 0.905,
@@ -707,6 +707,13 @@
       "void": false,
       "dq": false,
       "tests": 2
+     },
+     "swe-fix-r0070-14": {
+      "credit": 0.9518,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": 1
      },
      "swe-fix-r0070-01": {
       "credit": 0.9986,
@@ -1292,9 +1299,9 @@
     }
    },
    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
-    "n": 7,
+    "n": 8,
     "verified": 2,
-    "credit": 0.2857,
+    "credit": 0.25,
     "tasks": {
      "swe-fix-r0070-26": {
       "credit": 0.0,
@@ -1306,6 +1313,13 @@
      "swe-fix-r0070-01": {
       "credit": 1.0,
       "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": 2
+     },
+     "swe-fix-r0070-18": {
+      "credit": 0.0,
+      "verified": false,
       "void": false,
       "dq": false,
       "tests": 2
@@ -1395,19 +1409,11 @@
     "baseline": 0.0
    },
    "swe-fix-r0070-14": {
-    "credit": 0.0,
+    "credit": 0.9518,
     "by": [
-     "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
-     "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
-     "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
-     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
-     "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf",
-     "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ",
-     "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE",
-     "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc",
-     "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj"
+     "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
     ],
-    "fixed": 0,
+    "fixed": 1,
     "tests": 1,
     "baseline": 0.0
    },
@@ -1417,6 +1423,7 @@
      "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
      "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
      "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf",
      "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ",
      "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE",
