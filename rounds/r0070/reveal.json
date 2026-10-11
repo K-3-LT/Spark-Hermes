@@ -1,0 +1,194 @@
+{
+ "swe-fix-r0070-01": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_enum.py::DescribeBaseXmlEnum::and_it_can_find_the_member_from_None_when_a_member_maps_that"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_enum.py::DescribeBaseXmlEnum::but_it_raises_when_there_is_no_such_mapped_XML_value"
+    ]
+   ],
+   "assets_sha256": "d8f44ac976a3f942df63bf96c6213c08d4f4c43ae9c528daf7be0d746f42b64c",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "faabf873f868d1daf6ddf4f194892fbe15a85c62c9e8176d0fcbecd477bbf8b5",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "python-openxml__python-docx.0cf6d71f.lm_rewrite__63e87gh1",
+   "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f"
+  }
+ },
+ "swe-fix-r0070-03": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_hive.py::TestHive::test_hive"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_teradata.py::TestTeradata::test_time"
+    ]
+   ],
+   "assets_sha256": "56b43efc598461b1f039f123cfef187fe78419b31f2c8aa061451769b99e6a01",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "d998a9ffc336a1229a3431eccc6b5ef963b3074219233b34ebe904ed58b5455b",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.combine_module__l83tbwp3",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ },
+ "swe-fix-r0070-11": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_split.py::test_split_begintag"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_split.py::test_split_cursor_declare"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_split.py::test_split_dropif"
+    ]
+   ],
+   "assets_sha256": "df0a44b54a9d1dc0ac221c3d31f6c2343e786a9aa2f275b2ad7dfb8d9a858a92",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "78c002897e25fe4d3170a3abf738c13b9df8c2f43038999e151c4bd2748c4994",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "andialbrecht__sqlparse.e57923b3.lm_rewrite__n19hsh7s",
+   "environment": "jyangballin/swesmith.x86_64.andialbrecht_1776_sqlparse.e57923b3"
+  }
+ },
+ "swe-fix-r0070-12": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_lookup.py::LookupTest::test_limit"
+    ]
+   ],
+   "assets_sha256": "04185c3d9c1d9610bfa1441c4bf28265a4688d1012890620eda027ec9e2b01f0",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "858ff6f5e4b1317b386d380f48d7b899936c05342061e6d1ba6510691e365f1d",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "pylint-dev__astroid.b114f6b5.func_basic__dnxncskq",
+   "environment": "jyangballin/swesmith.x86_64.pylint-dev_1776_astroid.b114f6b5"
+  }
+ },
+ "swe-fix-r0070-14": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_mysql.py::TestMySQL::test_ddl"
+    ]
+   ],
+   "assets_sha256": "501e5a0244940b5cda69af89f326e0335e4923f391b1bdf03694ed0b32f0f929",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "6ff8a8317c71e0afade386de0c69909cc6c99fa2f68ebd1b140b7914b577fd27",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.func_pm_remove_assign__bcn24cfm",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ },
+ "swe-fix-r0070-18": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_blkcntnr.py::DescribeBlockItemContainer::it_can_iterate_its_inner_content"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_section.py::DescribeSection::it_can_iterate_its_inner_content"
+    ]
+   ],
+   "assets_sha256": "10c872860a271483cf1bc8c5c6e8a7e9185252d64ab1fb5f779bfddd098382e1",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "e0550460c34609ec23e3e90c1e931e3206678ba6fe13ac93115a2e12b5cf689e",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "python-openxml__python-docx.0cf6d71f.func_basic__7wy8hhlh",
+   "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f"
+  }
+ },
+ "swe-fix-r0070-23": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_teradata.py::TestTeradata::test_create"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_serde.py::TestSerDe::test_serde"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_transpile.py::TestTranspile::test_identity"
+    ]
+   ],
+   "assets_sha256": "3141667075869ff92bdc5ee7dc23ea502d4ed1df0a109330d2f7529d14298df5",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "19fd0f96d34a7797932bdf8251e998f67ef75f07128451a2c5898d5d599d6d84",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.func_pm_remove_cond__uo6i6a3w",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ },
+ "swe-fix-r0070-26": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_oracle.py::TestOracle::test_query_restrictions"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_prql.py::TestPRQL::test_prql"
+    ]
+   ],
+   "assets_sha256": "83f5287fc670910d40a075f4eb629ef9f0a85f471f171428e7b86e419cfc5319",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "879044c67782517b9ccec46446b4dad9817cb5eedc762010cd728524402f15b4",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.combine_module__n402i04b",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ }
+}
