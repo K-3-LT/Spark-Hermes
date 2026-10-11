@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791685689.4464421,
+ "updated": 1791686106.0187109,
  "round_id": "r0069",
  "stage": "evaluate",
  "stages": [
@@ -12240,6 +12240,18 @@
   {
    "stage": "evaluate_resume",
    "t": 1791680947.4412112
+  },
+  {
+   "stage": "resume",
+   "t": 1791686050.7835023
+  },
+  {
+   "stage": "images",
+   "t": 1791686058.650872
+  },
+  {
+   "stage": "evaluate_resume",
+   "t": 1791686059.3050988
   }
  ],
  "window": {
@@ -12497,7 +12509,7 @@
  },
  "rejected": {},
  "progress": {
-  "done": 42,
+  "done": 47,
   "total": 80,
   "by_surface": {
    "null": {
@@ -12753,9 +12765,9 @@
     }
    },
    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
-    "n": 7,
+    "n": 8,
     "verified": 3,
-    "credit": 0.5952,
+    "credit": 0.5833,
     "tasks": {
      "swe-fix-r0069-05": {
       "credit": 1.0,
@@ -12799,6 +12811,13 @@
       "dq": false,
       "tests": 3
      },
+     "swe-fix-r0069-23": {
+      "credit": 0.5,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 2
+     },
      "swe-fix-r0069-24": {
       "credit": 0.6667,
       "verified": false,
@@ -12809,9 +12828,9 @@
     }
    },
    "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
-    "n": 3,
-    "verified": 1,
-    "credit": 0.5,
+    "n": 7,
+    "verified": 2,
+    "credit": 0.5476,
     "tasks": {
      "swe-fix-r0069-05": {
       "credit": 1.0,
@@ -12829,6 +12848,34 @@
      },
      "swe-fix-r0069-08": {
       "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 3
+     },
+     "swe-fix-r0069-09": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": 1
+     },
+     "swe-fix-r0069-11": {
+      "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 5
+     },
+     "swe-fix-r0069-18": {
+      "credit": 0.6667,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 3
+     },
+     "swe-fix-r0069-24": {
+      "credit": 0.6667,
       "verified": false,
       "void": false,
       "dq": false,
@@ -12882,6 +12929,7 @@
     "by": [
      "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+     "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ",
      "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
     ],
     "fixed": 1,
@@ -12894,6 +12942,7 @@
      "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
      "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
+     "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ",
      "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
     ],
     "fixed": 0,
@@ -12913,6 +12962,7 @@
    "swe-fix-r0069-23": {
     "credit": 0.5,
     "by": [
+     "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
      "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
      "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
@@ -12925,7 +12975,8 @@
     "credit": 0.6667,
     "by": [
      "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
-     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6"
+     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
+     "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ"
     ],
     "fixed": 2,
     "tests": 3,
