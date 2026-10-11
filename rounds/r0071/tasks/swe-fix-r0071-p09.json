@@ -1,0 +1,27 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0071-p09",
+ "round_id": "r0071",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nGPX fill_time_data_with_regular_intervals produces incorrect timing when using end_time parameter\n\n#### Description\n\nWhen using `fill_time_data_with_regular_intervals()` with `end_time` parameter (either alone with `time_delta` or combined with `start_time`), the method produces incorrect timing that doesn't match the expected start and end times.\n\n#### Steps/Code to Reproduce\n\n```python\nimport gpxpy\nimport datetime\n\n# Load a GPX file\nwith open('sample.gpx', 'r') as gpx_file:\n    gpx = gpxpy.parse(gpx_file)\n\n# Test case 1: Using start_time and end_time\nstart_time = datetime.datetime(2018, 7, 4, 0, 0, 0)\nend_time = datetime.datetime(2018, 7, 4, 1, 0, 0)\ngpx.fill_time_data_with_regular_intervals(start_time=start_time, end_time=end_time)\n\ntime_bounds = gpx.get_time_bounds()\nprint(f\"Expected start: {start_time}\")\nprint(f\"Actual start: {time_bounds.start_time}\")\nprint(f\"Expected end: {end_time}\")\nprint(f\"Actual end: {time_bounds.end_time}\")\n\n# Test case 2: Using end_time and time_delta\ngpx2 = gpxpy.parse(gpx_file)\nend_time = datetime.datetime(2018, 7, 4, 0, 0, 0)\ntime_delta = datetime.timedelta(seconds=1)\ngpx2.fill_time_data_with_regular_intervals(time_delta=time_delta, end_time=end_time)\n\ntime_bounds2 = gpx2.get_time_bounds()\nexpected_start = end_time - (gpx2.get_points_no() - 1) * time_delta\nprint(f\"Expected start: {expected_start}\")\nprint(f\"Actual start: {time_bounds2.start_time}\")\nprint(f\"Expected end: {end_time}\")\nprint(f\"Actual end: {time_bounds2.end_time}\")\n```\n\nThe actual start and end times don't match the expected values, with timing being off by significant amounts.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tkrajina__gpxpy.09fc46b3.func_basic__i2ok7qhd",
+  "environment": "jyangballin/swesmith.x86_64.tkrajina_1776_gpxpy.09fc46b3",
+  "fail_to_pass": [
+   "test.py::GPXTests::test_gpx_fill_time_data_with_end_time_and_time_delta",
+   "test.py::GPXTests::test_gpx_fill_time_data_with_start_time_and_end_time",
+   "test.py::GPXTests::test_gpx_fill_time_data_with_start_time_and_end_time_and_time_delta"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

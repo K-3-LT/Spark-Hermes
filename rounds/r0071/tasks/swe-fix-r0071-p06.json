@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0071-p06",
+ "round_id": "r0071",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n# DATETRUNC function not properly handling string literals in TSQL dialect\n\n### Description\nI've encountered an issue with the DATETRUNC function in the TSQL dialect. When using a string literal as the timestamp parameter, it's not being properly cast to DATETIME2 as expected.\n\n### Steps to Reproduce\nThe issue can be reproduced with the following SQL query:\n\n```sql\nSELECT DATETRUNC(month, 'foo')\n```\n\nWhen using the TSQL dialect, this should be translated to:\n```sql\nSELECT DATETRUNC(MONTH, CAST('foo' AS DATETIME2))\n```\n\nBut instead, it's not applying the CAST to the string literal.\n\n### Expected behavior\nWhen a string literal is passed as the timestamp parameter to DATETRUNC, it should be automatically cast to DATETIME2 type in the TSQL dialect.\n\n### Actual behavior\nThe string literal is not being cast to DATETIME2, which would cause runtime errors when executing the query against a TSQL database.\n\n### Reproduction script\n```python\nfrom sqlglot import parse_one, transpile\n\n# This should generate the proper CAST for the string literal\nquery = \"SELECT DATETRUNC(month, 'foo')\"\nprint(transpile(query, read=\"tsql\", write=\"tsql\")[0])\n\n# This works fine with column references\nquery2 = \"SELECT DATETRUNC(month, foo)\"\nprint(transpile(query2, read=\"tsql\", write=\"tsql\")[0])\n```\n\nThe first query should output: `SELECT DATETRUNC(MONTH, CAST('foo' AS DATETIME2))`\nBut it's not adding the CAST operation.\n\n### System Details\nPython 3.10\nsqlglot latest version\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.lm_rewrite__65crukw7",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/dialects/test_tsql.py::TestTSQL::test_datetrunc"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

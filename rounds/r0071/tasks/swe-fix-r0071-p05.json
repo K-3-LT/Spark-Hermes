@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0071-p05",
+ "round_id": "r0071",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nTable cell span validation allows invalid rectangular spans\n\n#### Description\n\nWhen merging table cells, the span validation logic incorrectly allows certain invalid rectangular spans that should raise an `InvalidSpanError`.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom docx import Document\nfrom docx.oxml.table import CT_Tbl\n\n# Create a document with a table\ndoc = Document()\ntable = doc.add_table(rows=3, cols=3)\n\n# Get the underlying XML table object\ntbl_xml = table._tbl\n\n# Try to span cells that should be invalid but are currently allowed\ntc1 = tbl_xml.tr_lst[0].tc_lst[1]  # cell at row 0, col 1\ntc2 = tbl_xml.tr_lst[1].tc_lst[0]  # cell at row 1, col 0\n\n# This should raise InvalidSpanError but doesn't\ntry:\n    dimensions = tc1._span_dimensions(tc2)\n    print(\"ERROR: Invalid span was allowed\")\n    print(f\"Span dimensions: {dimensions}\")\nexcept Exception as e:\n    print(f\"Correctly caught error: {e}\")\n```\n\nThe span validation is missing checks for certain non-rectangular span configurations, allowing invalid table cell merges to proceed when they should be rejected.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.func_pm_remove_cond__k0ou6i24",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/oxml/test_table.py::DescribeCT_Tc::it_raises_on_invalid_span[5-0-1-1-0]",
+   "tests/oxml/test_table.py::DescribeCT_Tc::it_raises_on_invalid_span[5-1-0-2-1]"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

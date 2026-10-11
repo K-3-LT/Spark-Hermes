@@ -1,0 +1,30 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0071-p07",
+ "round_id": "r0071",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nMissing methods in Relationships class break document processing\n\n#### Description\n\nAfter recent changes, several methods are missing from the `Relationships` class which causes failures when trying to access related parts or serialize relationships to XML.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom docx import Document\n\n# This will fail when trying to process relationships\ndoc = Document()\nsection = doc.sections[0]\n\n# Trying to iterate inner content fails\nlist(section.iter_inner_content())\n```\n\nThe issue also occurs when trying to find parts by relationship type:\n\n```python\n# This would fail if you had access to the internal relationships\n# rels.part_with_reltype('http://some/reltype')\n```\n\nAnd when trying to serialize relationships:\n\n```python\n# This would fail when trying to get XML representation\n# rels.xml\n```\n\nThe missing functionality affects basic document operations like iterating through document content and writing documents to files.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.func_pm_class_rm_funcs__wzpo40fq",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/opc/test_part.py::DescribePartRelationshipManagementInterface::it_can_find_a_related_part_by_reltype",
+   "tests/opc/test_pkgwriter.py::DescribePackageWriter::it_can_write_a_list_of_parts",
+   "tests/opc/test_rel.py::DescribeRelationships::it_can_compose_rels_xml",
+   "tests/opc/test_rel.py::DescribeRelationships::it_can_find_a_related_part_by_reltype",
+   "tests/test_blkcntnr.py::DescribeBlockItemContainer::it_can_iterate_its_inner_content",
+   "tests/test_section.py::DescribeSection::it_can_iterate_its_inner_content"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

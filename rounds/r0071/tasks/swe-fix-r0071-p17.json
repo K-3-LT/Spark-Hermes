@@ -1,0 +1,30 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0071-p17",
+ "round_id": "r0071",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nUserInfo endpoint incorrectly raises InsufficientScopeError when openid scope is present\n\n#### Description\n\nThe UserInfo endpoint is raising `InsufficientScopeError` when the `openid` scope is present in the request, which is the opposite of the expected behavior. According to OpenID Connect specification, the UserInfo endpoint should only be accessible when the `openid` scope is included in the access token.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom oauthlib.openid.connect.core.endpoints.userinfo import UserInfoEndpoint\nfrom oauthlib.common import Request\n\n# Create a UserInfo endpoint\nendpoint = UserInfoEndpoint()\n\n# Create a request with openid scope (this should be valid)\nrequest = Request('https://example.com/userinfo')\nrequest.scopes = ['openid', 'profile']\n\n# This incorrectly raises InsufficientScopeError\ntry:\n    endpoint.create_userinfo_response('https://example.com/userinfo')\nexcept Exception as e:\n    print(f\"Error: {type(e).__name__}\")\n    # Expected: Should work without error\n    # Actual: InsufficientScopeError is raised\n```\n\nThe endpoint should allow access when `openid` scope is present, but currently it's doing the reverse - blocking access when the scope is there and allowing it when it's missing.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "oauthlib__oauthlib.1fd52536.func_basic__nidnzfay",
+  "environment": "jyangballin/swesmith.x86_64.oauthlib_1776_oauthlib.1fd52536",
+  "fail_to_pass": [
+   "tests/openid/connect/core/endpoints/test_userinfo_endpoint.py::UserInfoEndpointTest::test_userinfo_json_response",
+   "tests/openid/connect/core/endpoints/test_userinfo_endpoint.py::UserInfoEndpointTest::test_userinfo_jwt_response",
+   "tests/openid/connect/core/endpoints/test_userinfo_endpoint.py::UserInfoEndpointTest::test_userinfo_no_auth",
+   "tests/openid/connect/core/endpoints/test_userinfo_endpoint.py::UserInfoEndpointTest::test_userinfo_token_expired",
+   "tests/openid/connect/core/endpoints/test_userinfo_endpoint.py::UserInfoEndpointTest::test_userinfo_token_no_openid_scope",
+   "tests/openid/connect/core/endpoints/test_userinfo_endpoint.py::UserInfoEndpointTest::test_userinfo_wrong_auth"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

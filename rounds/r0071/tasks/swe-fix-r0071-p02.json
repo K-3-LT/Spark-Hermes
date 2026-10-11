@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0071-p02",
+ "round_id": "r0071",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nHive TRANSFORM parsing broken after recent changes\n\n#### Description\n\nThe Hive dialect's TRANSFORM statement parsing is completely broken. When trying to parse any TRANSFORM query, it fails with an `UnboundLocalError` for several variables that are referenced before assignment.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlglot\n\n# This should work but throws UnboundLocalError\nsql = \"\"\"\nSELECT TRANSFORM (col1, col2) \nUSING 'script.py' \nAS (output1, output2)\nFROM my_table\n\"\"\"\n\ntry:\n    parsed = sqlglot.parse(sql, dialect=\"hive\")\n    print(\"Parsed successfully:\", parsed)\nexcept Exception as e:\n    print(\"Error:\", e)\n```\n\nThe error occurs when the parser tries to process TRANSFORM statements. Variables like `args`, `row_format_before`, `row_format_after`, `record_reader`, and `command_script` are being referenced before they're defined in the parsing logic.\n\nThis affects any Hive query that uses the TRANSFORM clause, which is a common pattern for processing data with external scripts in Hive.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.func_pm_ctrl_shuffle__0ld3r17e",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/dialects/test_hive.py::TestHive::test_hive"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

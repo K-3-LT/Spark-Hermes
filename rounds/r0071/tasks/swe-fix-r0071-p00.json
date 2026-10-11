@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0071-p00",
+ "round_id": "r0071",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nNameError when listing nodes with specific node names\n\n#### Description\n\nWhen using the `cantools list` command with the `--nodes` option and specifying specific node names, a `NameError` occurs because `node_names` is referenced before assignment.\n\n#### Steps/Code to Reproduce\n\n```python\nimport cantools\n\n# Load a CAN database file\ndb = cantools.database.load_file('tests/files/arxml/system-3.2.3.arxml')\n\n# Try to list specific nodes\nfrom cantools.subparsers.list import _do_list_nodes\n\nclass Args:\n    def __init__(self):\n        self.items = ['Driver']  # Specify a node name\n\nargs = Args()\n_do_list_nodes(db, args)\n```\n\nThis will raise:\n```\nUnboundLocalError: local variable 'node_names' referenced before assignment\n```\n\nThe issue occurs when trying to filter nodes by name - the variable `node_names` is used in the filtering logic but is not defined at that point in the function.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "cantools__cantools.0c6a7871.func_pm_ctrl_shuffle__syh7vsuf",
+  "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871",
+  "fail_to_pass": [
+   "tests/test_list.py::CanToolsListTest::test_arxml3",
+   "tests/test_list.py::CanToolsListTest::test_arxml4"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

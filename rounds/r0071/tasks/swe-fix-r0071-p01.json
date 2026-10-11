@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0071-p01",
+ "round_id": "r0071",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nparse_implicit_response not handling expires_in parameter correctly\n\n#### Description\n\nThe `parse_implicit_response` function is not properly processing the `expires_in` parameter from OAuth2 implicit flow responses. The function should convert the `expires_in` string value to an integer and calculate an `expires_at` timestamp, but it's currently not doing either of these operations.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom oauthlib.oauth2.rfc6749.parameters import parse_implicit_response\n\n# Example implicit response URI with expires_in parameter\nuri = \"http://example.com/cb#access_token=2YotnFZFEjr1zCsicMWpAA&state=xyz&token_type=Bearer&expires_in=3600\"\n\nresult = parse_implicit_response(uri)\nprint(\"Result:\", result)\nprint(\"expires_in type:\", type(result.get('expires_in')))\nprint(\"expires_at present:\", 'expires_at' in result)\n```\n\nExpected behavior:\n- `expires_in` should be converted to an integer (3600)\n- `expires_at` should be calculated and included in the result\n\nActual behavior:\n- `expires_in` remains as a string\n- `expires_at` is not calculated or included\n\nThis affects any OAuth2 client using the implicit flow that relies on proper token expiration handling.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "oauthlib__oauthlib.1fd52536.func_pm_remove_cond__lz5y6itc",
+  "environment": "jyangballin/swesmith.x86_64.oauthlib_1776_oauthlib.1fd52536",
+  "fail_to_pass": [
+   "tests/oauth2/rfc6749/clients/test_mobile_application.py::MobileApplicationClientTest::test_parse_token_response",
+   "tests/oauth2/rfc6749/test_parameters.py::ParameterTests::test_implicit_token_response"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}
