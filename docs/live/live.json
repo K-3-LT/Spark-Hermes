@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791762737.0128105,
+ "updated": 1791762922.6927857,
  "round_id": "r0071",
  "stage": "evaluate",
  "stages": [
@@ -26,14 +26,6 @@
    "t": 1791752824.7184792
   },
   {
-   "stage": "resume",
-   "t": 1791753731.8628438
-  },
-  {
-   "stage": "resume",
-   "t": 1791756214.846026
-  },
-  {
    "stage": "window",
    "t": 1791756425.3749409
   },
@@ -43,103 +35,23 @@
   },
   {
    "stage": "images",
-   "t": 1791756521.1545327
-  },
-  {
-   "stage": "evaluate_relaunch",
-   "t": 1791761004.9564207
-  },
-  {
-   "stage": "evaluate_relaunch",
-   "t": 1791761143.822934
-  },
-  {
-   "stage": "resume",
-   "t": 1791761342.5802226
-  },
-  {
-   "stage": "resume",
-   "t": 1791761402.737513
-  },
-  {
-   "stage": "resume",
-   "t": 1791761463.0697396
-  },
-  {
-   "stage": "resume",
-   "t": 1791761523.365014
-  },
-  {
-   "stage": "resume",
-   "t": 1791761583.5190895
-  },
-  {
-   "stage": "resume",
-   "t": 1791761643.675414
-  },
-  {
-   "stage": "resume",
-   "t": 1791761703.8138168
-  },
-  {
-   "stage": "resume",
-   "t": 1791761764.0374408
-  },
-  {
-   "stage": "resume",
-   "t": 1791761824.192201
-  },
-  {
-   "stage": "resume",
-   "t": 1791761884.3304145
-  },
-  {
-   "stage": "resume",
-   "t": 1791761944.5023534
-  },
-  {
-   "stage": "resume",
-   "t": 1791762004.6429539
-  },
-  {
-   "stage": "resume",
-   "t": 1791762064.7905273
-  },
-  {
-   "stage": "resume",
-   "t": 1791762124.9429204
-  },
-  {
-   "stage": "resume",
-   "t": 1791762185.100609
-  },
-  {
-   "stage": "resume",
-   "t": 1791762245.2602985
-  },
-  {
-   "stage": "resume",
-   "t": 1791762305.3941243
-  },
-  {
-   "stage": "resume",
-   "t": 1791762332.1135035
-  },
-  {
-   "stage": "resume",
-   "t": 1791762575.6591392
-  },
-  {
-   "stage": "images",
-   "t": 1791762584.6972442
-  },
-  {
-   "stage": "resume",
-   "t": 1791762586.733237
-  },
-  {
-   "stage": "images",
    "t": 1791762595.6498544
+  },
+  {
+   "stage": "resume",
+   "t": 1791762600.0
+  },
+  {
+   "stage": "resume",
+   "t": 1791762865.5022185
+  },
+  {
+   "stage": "images",
+   "t": 1791762874.991887
+  },
+  {
+   "stage": "evaluate_resume",
+   "t": 1791762875.845588
   }
  ],
  "window": {
@@ -413,9 +325,31 @@
  },
  "rejected": {},
  "progress": {
-  "done": 0,
+  "done": 2,
   "total": 66,
-  "by_surface": {},
+  "by_surface": {
+   "null": {
+    "n": 2,
+    "verified": 0,
+    "credit": 0.1,
+    "tasks": {
+     "swe-fix-r0071-00": {
+      "credit": 0.2,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 5
+     },
+     "swe-fix-r0071-05": {
+      "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 1
+     }
+    }
+   }
+  },
   "best": {}
  },
  "crown": null,
