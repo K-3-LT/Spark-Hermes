@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791697864.1913404,
+ "updated": 1791698238.2137434,
  "round_id": "r0069",
  "stage": "evaluate",
  "stages": [
@@ -337,7 +337,7 @@
  },
  "rejected": {},
  "progress": {
-  "done": 54,
+  "done": 56,
   "total": 80,
   "by_surface": {
    "null": {
@@ -719,9 +719,9 @@
     }
    },
    "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf": {
-    "n": 6,
+    "n": 7,
     "verified": 2,
-    "credit": 0.4167,
+    "credit": 0.4524,
     "tasks": {
      "swe-fix-r0069-05": {
       "credit": 0.0,
@@ -764,6 +764,27 @@
       "void": false,
       "dq": false,
       "tests": 3
+     },
+     "swe-fix-r0069-24": {
+      "credit": 0.6667,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": 3
+     }
+    }
+   },
+   "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
+    "n": 1,
+    "verified": 1,
+    "credit": 1.0,
+    "tasks": {
+     "swe-fix-r0069-05": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": 3
      }
     }
    }
@@ -772,6 +793,7 @@
    "swe-fix-r0069-05": {
     "credit": 1.0,
     "by": [
+     "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
      "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
      "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
@@ -863,6 +885,7 @@
     "by": [
      "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+     "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf",
      "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ",
      "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
     ],
