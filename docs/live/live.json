@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791838079.404208,
+ "updated": 1791838262.6054304,
  "round_id": "r0076",
  "stage": "evaluate",
  "stages": [
@@ -283,7 +283,7 @@
  },
  "rejected": {},
  "progress": {
-  "done": 41,
+  "done": 44,
   "total": 60,
   "by_surface": {
    "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
@@ -433,6 +433,27 @@
      }
     }
    },
+   "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
+    "n": 2,
+    "verified": 2,
+    "credit": 0.7222,
+    "tasks": {
+     "swe-fix-r0076-01": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0076-00": {
+      "credit": 0.4444,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     }
+    }
+   },
    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
     "n": 6,
     "verified": 4,
@@ -483,9 +504,9 @@
     }
    },
    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
-    "n": 5,
-    "verified": 2,
-    "credit": 0.4,
+    "n": 6,
+    "verified": 3,
+    "credit": 0.5,
     "tasks": {
      "swe-fix-r0076-01": {
       "credit": 0.0,
@@ -497,6 +518,13 @@
      "swe-fix-r0076-03": {
       "credit": 0.0,
       "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0076-05": {
+      "credit": 1.0,
+      "verified": true,
       "void": false,
       "dq": false,
       "tests": null
@@ -638,7 +666,8 @@
    "swe-fix-r0076-01": {
     "credit": 1.0,
     "by": [
-     "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK"
+     "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+     "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ"
     ],
     "fixed": null,
     "tests": null,
@@ -676,9 +705,9 @@
     "baseline": 0.0
    },
    "swe-fix-r0076-05": {
-    "credit": 0.9554,
+    "credit": 1.0,
     "by": [
-     "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
+     "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg"
     ],
     "fixed": null,
     "tests": null,
