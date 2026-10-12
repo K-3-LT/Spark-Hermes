@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791788937.841235,
+ "updated": 1791789127.0739868,
  "round_id": "r0072",
  "stage": "evaluate",
  "stages": [
@@ -293,7 +293,7 @@
  },
  "rejected": {},
  "progress": {
-  "done": 51,
+  "done": 54,
   "total": 66,
   "by_surface": {
    "null": {
@@ -689,9 +689,9 @@
     }
    },
    "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": {
-    "n": 3,
-    "verified": 3,
-    "credit": 0.5585,
+    "n": 6,
+    "verified": 4,
+    "credit": 0.4165,
     "tasks": {
      "swe-fix-r0072-00": {
       "credit": 0.5775,
@@ -710,6 +710,27 @@
      "swe-fix-r0072-02": {
       "credit": 0.418,
       "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0072-03": {
+      "credit": 0.4072,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0072-04": {
+      "credit": 0.2375,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0072-05": {
+      "credit": 0.1789,
+      "verified": false,
       "void": false,
       "dq": false,
       "tests": null
