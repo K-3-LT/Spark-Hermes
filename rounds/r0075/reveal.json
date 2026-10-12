@@ -1,0 +1,176 @@
+{
+ "swe-fix-r0075-00": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_format.py::TestFormatReindent::test_join"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_format.py::TestFormatReindentAligned::test_basic"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_format.py::TestFormatReindentAligned::test_group_by"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_format.py::TestFormatReindentAligned::test_group_by_subquery"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_format.py::TestFormatReindentAligned::test_joins"
+    ]
+   ],
+   "assets_sha256": "9223f4e515dfa8c91dbb44ee0ae6eac8bfdafcb9197fb690d850aab044e5ea80",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "1ed8017af8c3e9b0e4b1b34e8738cb6e13c110c94a779e97375e4a0a389e7232",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "andialbrecht__sqlparse.e57923b3.func_pm_remove_cond__5xn3knbz",
+   "environment": "jyangballin/swesmith.x86_64.andialbrecht_1776_sqlparse.e57923b3"
+  }
+ },
+ "swe-fix-r0075-01": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/opc/test_package.py::DescribeOpcPackage::it_can_save_to_a_pkg_file"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/opc/test_package.py::DescribeUnmarshaller::it_can_unmarshal_from_a_pkg_reader"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/opc/test_package.py::DescribeUnmarshaller::it_can_unmarshal_parts"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_blkcntnr.py::DescribeBlockItemContainer::it_can_iterate_its_inner_content"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_package.py::DescribePackage::it_gathers_package_image_parts_after_unmarshalling"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_section.py::DescribeSection::it_can_iterate_its_inner_content"
+    ]
+   ],
+   "assets_sha256": "99886c1492812ad227ed56382f420d466370cab5efc08a5f6c3b2ac4cd7f856e",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "8856b26597bb0552e367fb47a295fb4213f2fd7a8cb7a11da4b28f5b9fb93276",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "python-openxml__python-docx.0cf6d71f.combine_file__uq3vw9qi",
+   "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f"
+  }
+ },
+ "swe-fix-r0075-02": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_postgres.py::TestPostgres::test_postgres"
+    ]
+   ],
+   "assets_sha256": "ca1a0172182863b919cc34c930f6e6df07e01192d874451208753d67fe3f711e",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "32787587d24e16e8b5838f754d185efe7e8781d343b672204930c53ec3f60552",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.func_pm_ctrl_invert_if__yusdgxrb",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ },
+ "swe-fix-r0075-03": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_bounds"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_get_bounds_and_refresh_bounds"
+    ]
+   ],
+   "assets_sha256": "16207e313f683e8c888bd61955a79ceffda98ee1fd88505bcc22b15aa38468ae",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "97ca04dc75bd592431cdec3d00fc37588a60c096917f284c4bd9576b70818e15",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tkrajina__gpxpy.09fc46b3.func_pm_ctrl_shuffle__ogjxh6o7",
+   "environment": "jyangballin/swesmith.x86_64.tkrajina_1776_gpxpy.09fc46b3"
+  }
+ },
+ "swe-fix-r0075-04": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_distance_from_line"
+    ]
+   ],
+   "assets_sha256": "fd665667a8d4cbe60a293153a9fa8fa7b1e8e9dee4da93ab5faef47364d76a6e",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "f1053521215585c0311a3f24ae8a105aa465d8d1978c15c9b915343a81a40a31",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tkrajina__gpxpy.09fc46b3.func_pm_ctrl_shuffle__qakwv18i",
+   "environment": "jyangballin/swesmith.x86_64.tkrajina_1776_gpxpy.09fc46b3"
+  }
+ },
+ "swe-fix-r0075-05": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_autosar.py::CanToolsAutosarTest::test_autosar4_e2e_profile5"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_autosar.py::CanToolsAutosarTest::test_autosar4_secoc"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_list.py::CanToolsListTest::test_arxml4"
+    ]
+   ],
+   "assets_sha256": "8fd76a18c05e7906384654702104bb3780f205f006fb1f3d913229eaf593c203",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "4b62230236c68b5f29c810340ad151a6a9a7e55eae5d0fc447c7a4a5a87b0645",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "cantools__cantools.0c6a7871.combine_file__fn54v17l",
+   "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871"
+  }
+ }
+}

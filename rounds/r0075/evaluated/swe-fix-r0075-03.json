@@ -1,0 +1,29 @@
+{
+ "schema": "sh-instance-v2",
+ "task_id": "swe-fix-r0075-03",
+ "family": "swe_fix",
+ "behaviour": "act",
+ "round_id": "r0075",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nGPX get_bounds() method returns undefined variable\n\n#### Description\n\nThe `get_bounds()` method in the GPX class is broken and raises an `UnboundLocalError` when called. The method tries to return a variable `result` before it's defined.\n\n#### Steps/Code to Reproduce\n\n```python\nimport gpxpy\n\n# Create a simple GPX with some track points\ngpx = gpxpy.GPX()\ntrack = gpxpy.GPXTrack()\nsegment = gpxpy.GPXTrackSegment()\nsegment.points.append(gpxpy.GPXTrackPoint(latitude=10.0, longitude=20.0))\nsegment.points.append(gpxpy.GPXTrackPoint(latitude=15.0, longitude=25.0))\ntrack.segments.append(segment)\ngpx.tracks.append(track)\n\n# This should return bounds but raises UnboundLocalError instead\nbounds = gpx.get_bounds()\n```\n\nThe error message is:\n```\nUnboundLocalError: local variable 'result' referenced before assignment\n```\n</issue>\n",
+ "fixture": {},
+ "setup_commands": [],
+ "protected_paths": [
+  "setup.py"
+ ],
+ "commands": [],
+ "published": {
+  "predicates": []
+ },
+ "withheld_commitment": "hmac-sha256:decb05babc956454d51993ce2f715c10fb6c77a4d70ae809bad2be6dae6fd8d9",
+ "image": "swe-task:ba08240b229a15a1",
+ "network": "none",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "workdir": "/testbed",
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "requires_self_check": false
+}
