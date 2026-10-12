@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0072-p04",
+ "round_id": "r0072",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n### Issue: C Source Generation Produces Unexpected Output\n\n#### Description\n\nAfter updating the code, I've encountered an issue with the `generate_c_source` command. It seems that the generated C source files are not matching the expected output. This discrepancy is causing problems when trying to integrate the generated files into our existing build system.\n\n#### Steps to Reproduce\n\n1. Use the `cantools` command to generate C source files from a DBC file.\n2. Compare the generated `.h` and `.c` files with the expected files located in `tests/files/c_source/`.\n3. Notice that the generated files contain unexpected differences, particularly in the signal choice definitions.\n\n#### Example\n\nHere's a simplified example to illustrate the issue:\n\n```bash\ncantools generate_c_source tests/files/dbc/vehicle.dbc -o /tmp/generated\ndiff /tmp/generated/vehicle.h tests/files/c_source/vehicle.h\n```\n\nThe `diff` command shows differences in the signal choice definitions, which should not occur.\n\n#### Additional Information\n\nThis issue seems to be related to recent changes in the `_generate_choices_defines` function. The problem might be affecting how signal choices are defined, especially for signals with unique choices. This needs further investigation to ensure the generated files are consistent with the expected output.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "cantools__cantools.0c6a7871.lm_rewrite__yowovg7k",
+  "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871",
+  "fail_to_pass": [
+   "tests/test_command_line.py::CanToolsCommandLineTest::test_generate_c_source"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

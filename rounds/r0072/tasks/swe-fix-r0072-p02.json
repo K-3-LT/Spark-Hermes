@@ -1,0 +1,28 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0072-p02",
+ "round_id": "r0072",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nJoin normalization not working properly\n\n#### Description\n\nThe join normalization function appears to be returning early without processing any joins. When running SQL optimization, joins that should be normalized (like removing optional INNER/OUTER keywords and setting default join types) are not being processed correctly.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlglot\nfrom sqlglot import optimizer\n\n# Example SQL with joins that should be normalized\nsql = \"\"\"\nSELECT * \nFROM table1 t1 \nINNER JOIN table2 t2 ON t1.id = t2.id\nLEFT OUTER JOIN table3 t3 ON t2.id = t3.id\n\"\"\"\n\n# This should normalize the joins but doesn't work as expected\noptimized = optimizer.optimize(sql)\nprint(optimized.sql())\n```\n\nThe join normalization should remove the optional INNER and OUTER keywords, but the joins remain unchanged in the output.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.func_pm_ctrl_shuffle__bd6mam10",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/test_optimizer.py::TestOptimizer::test_optimize",
+   "tests/test_optimizer.py::TestOptimizer::test_optimize_joins",
+   "tests/test_optimizer.py::TestOptimizer::test_tpcds",
+   "tests/test_optimizer.py::TestOptimizer::test_tpch"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

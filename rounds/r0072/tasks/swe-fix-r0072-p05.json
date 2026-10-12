@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0072-p05",
+ "round_id": "r0072",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nParagraphFormat.space_after returns None when pPr element exists\n\n#### Description\n\nWhen accessing the `space_after` property on a `ParagraphFormat` object, it incorrectly returns `None` even when the paragraph properties element (`pPr`) exists and contains spacing information.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom docx import Document\nfrom docx.shared import Pt\n\n# Create a document and add a paragraph\ndoc = Document()\nparagraph = doc.add_paragraph(\"Test paragraph\")\n\n# Set space after the paragraph\nparagraph.paragraph_format.space_after = Pt(12)\n\n# Try to read the space_after value back\nspace_after = paragraph.paragraph_format.space_after\nprint(f\"Expected: 12pt spacing, Got: {space_after}\")\n```\n\nThe above code should return the spacing value that was set, but instead returns `None`.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.func_basic__c7qsd4hz",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/text/test_parfmt.py::DescribeParagraphFormat::it_knows_its_space_after[space_after_get_fixture0]",
+   "tests/text/test_parfmt.py::DescribeParagraphFormat::it_knows_its_space_after[space_after_get_fixture3]"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

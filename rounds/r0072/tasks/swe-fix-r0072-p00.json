@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0072-p00",
+ "round_id": "r0072",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nPOSITION function generates incorrect SQL when using ANSI position syntax\n\n#### Description\n\nWhen transpiling SQL that uses the ANSI `POSITION(needle IN haystack)` syntax, the generated output is incorrect. The function arguments are being processed in the wrong order, causing the needle and haystack to be swapped in the final SQL output.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlglot\n\n# This should work correctly\nsql = \"SELECT POSITION('needle' IN 'haystack')\"\nresult = sqlglot.transpile(sql, read=\"postgres\", write=\"postgres\")\nprint(\"Expected:\", \"SELECT POSITION('needle' IN 'haystack')\")\nprint(\"Actual:  \", result[0])\n\n# Another example showing the issue\nsql2 = \"SELECT POSITION('test' IN column_name)\"  \nresult2 = sqlglot.transpile(sql2, read=\"postgres\", write=\"postgres\")\nprint(\"Expected:\", \"SELECT POSITION('test' IN column_name)\")\nprint(\"Actual:  \", result2[0])\n```\n\nThe output shows that the needle and haystack arguments are being swapped in the generated SQL, producing incorrect results like `POSITION('haystack' IN 'needle')` instead of the expected `POSITION('needle' IN 'haystack')`.\n\nThis affects any dialect that uses the ANSI position syntax and can lead to incorrect query results when the transpiled SQL is executed.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.func_pm_ctrl_invert_if__9yvdfppq",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/dialects/test_dialect.py::TestDialect::test_operators"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

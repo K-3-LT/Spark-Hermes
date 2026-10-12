@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0072-p01",
+ "round_id": "r0072",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n#### Description\n\nAUTOSAR E2E Profile 2 CRC computation fails with TypeError when using Message objects\n\n#### Steps/Code to Reproduce\n\n```python\nimport cantools\n\ndb = cantools.db.load_file('tests/files/arxml/system-3.2.3.arxml')\nmsg = db.get_message_by_name('Status')\n\n# This should work but raises TypeError\ncantools.autosar.compute_profile2_crc(b'\\x00Q\"', msg)\n```\n\nThe error occurs when trying to compute CRC for AUTOSAR E2E Profile 2 messages using a Message object instead of a data_id integer. The function should handle both cases but currently fails with:\n\n```\nTypeError: 'NoneType' object cannot be interpreted as an integer\n```\n\nThis affects the E2E protection functionality for AUTOSAR messages where the message object contains the necessary E2E configuration data.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "cantools__cantools.0c6a7871.func_pm_remove_assign__ys7j49kx",
+  "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871",
+  "fail_to_pass": [
+   "tests/test_autosar.py::CanToolsAutosarTest::test_autosar3_e2e_profile2"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}
