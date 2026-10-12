@@ -1,0 +1,80 @@
+{
+ "schema": "sh-crown-v1",
+ "round_id": "r0072",
+ "king": "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb",
+ "standings": {
+  "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
+   "n": 6,
+   "verified": 3,
+   "dq": 0,
+   "credit": 0.357695,
+   "delta": 0.23027,
+   "rank": 7
+  },
+  "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
+   "n": 6,
+   "verified": 4,
+   "dq": 0,
+   "credit": 0.429016,
+   "delta": 0.301591,
+   "rank": 4
+  },
+  "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": {
+   "n": 6,
+   "verified": 4,
+   "dq": 0,
+   "credit": 0.390043,
+   "delta": 0.262618,
+   "rank": 6
+  },
+  "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
+   "n": 6,
+   "verified": 2,
+   "dq": 0,
+   "credit": 0.284448,
+   "delta": 0.157023,
+   "rank": 8
+  },
+  "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
+   "n": 6,
+   "verified": 1,
+   "dq": 0,
+   "credit": 0.234839,
+   "delta": 0.107414,
+   "rank": 9
+  },
+  "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
+   "n": 6,
+   "verified": 6,
+   "dq": 0,
+   "credit": 0.87672,
+   "delta": 0.749295,
+   "rank": 1
+  },
+  "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
+   "n": 6,
+   "verified": 6,
+   "dq": 0,
+   "credit": 0.576584,
+   "delta": 0.449159,
+   "rank": 2
+  },
+  "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
+   "n": 6,
+   "verified": 4,
+   "dq": 0,
+   "credit": 0.455827,
+   "delta": 0.328402,
+   "rank": 3
+  },
+  "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": {
+   "n": 6,
+   "verified": 4,
+   "dq": 0,
+   "credit": 0.416542,
+   "delta": 0.289117,
+   "rank": 5
+  }
+ },
+ "rule": "highest paired delta vs baseline on this round's instances, > 0, \u2265 4 paired, not disqualified, not a near-duplicate of another author's earlier bundle; a tie does not dethrone the incumbent; other ties go to the strategy that first appeared earliest, then a round-keyed hash"
+}

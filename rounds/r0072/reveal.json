@@ -1,0 +1,151 @@
+{
+ "swe-fix-r0072-00": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_bigquery.py::TestBigQuery::test_bigquery"
+    ]
+   ],
+   "assets_sha256": "65994fb4e57bbce4954021b7a3cf3bf9908df7233e97ef8a5a9e3bae2411dd4f",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "610a62683cdc2a194699cd4a3395b4ebc4711ada052e6495ee5e3018b9434b19",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.func_pm_remove_assign__a8pwqs9g",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ },
+ "swe-fix-r0072-01": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_database.py::CanToolsDatabaseTest::test_jopp_5_0_sym"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_database.py::CanToolsDatabaseTest::test_jopp_6_0_sym"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_database.py::CanToolsDatabaseTest::test_jopp_6_0_sym_re_read"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_database.py::CanToolsDatabaseTest::test_multiplexed_variables_sym"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_database.py::CanToolsDatabaseTest::test_type_parameter_overrides_is_extended_sym"
+    ]
+   ],
+   "assets_sha256": "4b8a023cad4a48bb4ee4a499e71ec50f0b7615c385f01ce26c1d5ab56b9c26a3",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "c34d53559ebe3a5c651e2c9e6e59a5a572e8f4038f489ae57b6cf2bcc056c280",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "cantools__cantools.0c6a7871.func_basic__phkg2wbg",
+   "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871"
+  }
+ },
+ "swe-fix-r0072-02": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_oracle.py::TestOracle::test_multitable_inserts"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_transpile.py::TestTranspile::test_pretty"
+    ]
+   ],
+   "assets_sha256": "869190acc7853b710bfe868f334130729ad92e18c8f13f003e50365ff03f34ea",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "cfda93e46cc69064e5a13628cfb9b2e8169c700da0307849dfc088da6d1fa398",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.lm_rewrite__952r2ona",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ },
+ "swe-fix-r0072-03": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_enable_disable"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_on_message"
+    ]
+   ],
+   "assets_sha256": "75654b3bf8d4196a0e3b8cd3c7278ca397877a81add8dff038dce2178f97a5e7",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "c8f9c39870487a2e5eccf0d3e9edeb574e61bf1da115f14cca7c62e5a32469a6",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "cantools__cantools.0c6a7871.func_basic__nwslhykz",
+   "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871"
+  }
+ },
+ "swe-fix-r0072-04": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_database.py::CanToolsDatabaseTest::test_issue_167_long_names_from_scratch"
+    ]
+   ],
+   "assets_sha256": "36a11f5336bdb7ca240e4107bc8fda0bcbd04e2f28e02d08b82412ab598e6565",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "cec52e17ec431b4898ef5b6370b17f1e7198b942dd3e5699a5c27c16edc5c037",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "cantools__cantools.0c6a7871.func_basic__xk1kww1j",
+   "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871"
+  }
+ },
+ "swe-fix-r0072-05": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/image/test_image.py::DescribeImage::it_correctly_characterizes_known_images[8]"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/image/test_tiff.py::Describe_TiffParser::it_knows_image_width_and_height_after_parsing"
+    ]
+   ],
+   "assets_sha256": "5cac7ae78311171bdcda68c8c788df8fe3c7a3a3d849be40b864d24d6dc29b14",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "2e27438130a2de09812bbe25d224cc24bea7dac230f66222e6e0c34439925804",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "python-openxml__python-docx.0cf6d71f.func_basic__1zenzf3o",
+   "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f"
+  }
+ }
+}
