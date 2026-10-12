@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0077-p02",
+ "round_id": "r0077",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nDefault settings part creation fails with truncated XML\n\n#### Description\n\nWhen creating a default settings part, the XML content gets truncated causing the document structure to be incomplete. This results in an incorrect number of elements being parsed.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom docx.parts.settings import SettingsPart\nfrom docx.opc.package import OpcPackage\n\npackage = OpcPackage()\nsettings_part = SettingsPart.default(package)\nprint(f\"Number of elements: {len(settings_part.element)}\")\n# Expected: 6 elements\n# Actual: fewer elements due to truncated XML\n```\n\nThe issue occurs when the default settings XML template is being read but only a portion of the file content is loaded, leading to malformed XML structure.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.func_basic__9wy9y0i0",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/parts/test_settings.py::DescribeSettingsPart::it_constructs_a_default_settings_part_to_help"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

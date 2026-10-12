@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0077-p03",
+ "round_id": "r0077",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nShape dimensions getting negated when setting cx property\n\n#### Description\n\nWhen setting the `cx` property on shape elements, the values are being negated instead of being set directly. This affects both `CT_ShapeProperties` and `CT_Transform2D` classes where the `cx` setter is incorrectly applying negative values.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom docx.oxml.shape import CT_ShapeProperties, CT_Transform2D\n\n# Test CT_ShapeProperties\nshape_props = CT_ShapeProperties()\nshape_props.cx = 100\nprint(f\"Expected: 100, Got: {shape_props.cx}\")\n\n# Test CT_Transform2D  \ntransform = CT_Transform2D()\ntransform.cx = 200\nprint(f\"Expected: 200, Got: {transform.cx}\")\n\n# Also affects integer vs non-integer handling in CT_Transform2D\ntransform.cx = 150.5\nprint(f\"Expected: 150.5, Got: {transform.cx}\")\n```\n\nExpected output:\n```\nExpected: 100, Got: 100\nExpected: 200, Got: 200  \nExpected: 150.5, Got: 150.5\n```\n\nActual output:\n```\nExpected: 100, Got: -100\nExpected: 200, Got: -200\nExpected: 150.5, Got: 301.0\n```\n\nThe issue also affects inline shape creation where dimensions are not being set correctly, causing XML generation to produce unexpected values.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.combine_file__m3ojod6s",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/parts/test_story.py::DescribeStoryPart::it_can_create_a_new_pic_inline"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

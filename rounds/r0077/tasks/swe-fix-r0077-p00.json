@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0077-p00",
+ "round_id": "r0077",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n### Bug Report\n\n**Bug Summary**\nIt seems that there is an issue with parsing table references in BigQuery when using certain formats. The problem arises when trying to parse table references that include project, dataset, and table names, especially when dealing with quoted identifiers.\n\n**Code for Reproduction**\nHere's a minimal example to reproduce the issue:\n\n```python\nfrom sqlglot import parse_one, exp\n\n# Example of a table reference with a project, dataset, and table\ntable = parse_one('`my-project.my-dataset.my-table`', into=exp.Table)\nprint(table.catalog)  # Expected: 'my-project'\nprint(table.db)       # Expected: 'my-dataset'\nprint(table.name)     # Expected: 'my-table'\n\n# Example of a table reference with a dataset and table\ntable = parse_one('`my-dataset.my-table`', into=exp.Table)\nprint(table.db)       # Expected: 'my-dataset'\nprint(table.name)     # Expected: 'my-table'\n```\n\n**Actual Outcome**\nThe parsing does not correctly handle the separation of project, dataset, and table names, leading to incorrect assignment of these parts. This results in unexpected behavior when trying to access the catalog, db, and name attributes.\n\n**Expected Outcome**\nThe table reference should be correctly parsed into its respective parts, allowing for accurate access to the catalog, db, and name attributes.\n\n**Environment**\n- Python version: 3.10.16\n- SQLGlot version: [version number]\n- Operating System: [OS name and version]\n\nThis issue seems to have been introduced in a recent change to the `_parse_table_parts` method. It would be great to have this resolved to ensure proper parsing of table references in BigQuery.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.lm_rewrite__3njrqh39",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/dialects/test_bigquery.py::TestBigQuery::test_bigquery",
+   "tests/dialects/test_bigquery.py::TestBigQuery::test_models"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

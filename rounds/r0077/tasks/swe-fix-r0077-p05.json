@@ -1,0 +1,32 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0077-p05",
+ "round_id": "r0077",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nModule.statement() raises ValueError instead of StatementMissing\n\n#### Description\n\nWhen calling `statement()` on a Module node, it now raises a `ValueError` instead of the expected `StatementMissing` exception.\n\n#### Steps/Code to Reproduce\n\n```python\nimport astroid\n\n# Create a simple module\ncode = \"\"\"\nx = 1\n\"\"\"\nmodule = astroid.parse(code)\n\n# This should raise StatementMissing but raises ValueError instead\ntry:\n    module.statement()\nexcept Exception as e:\n    print(f\"Got {type(e).__name__}: {e}\")\n    # Expected: StatementMissing\n    # Actual: ValueError: The statement is missing for: <Module(name) l.0 at 0x...>\n```\n\nThe method is also incorrectly checking `if future is None:` instead of `if future is not None:` for the deprecation warning, causing the warning to be shown when it shouldn't be.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "pylint-dev__astroid.b114f6b5.func_basic__l1wek1na",
+  "environment": "jyangballin/swesmith.x86_64.pylint-dev_1776_astroid.b114f6b5",
+  "fail_to_pass": [
+   "tests/test_builder.py::FileBuildTest::test_module_base_props",
+   "tests/test_nodes.py::ConstNodeTest::test_bool",
+   "tests/test_nodes.py::ConstNodeTest::test_complex",
+   "tests/test_nodes.py::ConstNodeTest::test_float",
+   "tests/test_nodes.py::ConstNodeTest::test_int",
+   "tests/test_nodes.py::ConstNodeTest::test_none",
+   "tests/test_nodes.py::ConstNodeTest::test_str",
+   "tests/test_nodes.py::ConstNodeTest::test_unicode"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

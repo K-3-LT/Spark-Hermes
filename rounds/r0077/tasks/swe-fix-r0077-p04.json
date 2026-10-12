@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0077-p04",
+ "round_id": "r0077",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nTrack join operation produces incorrect results when joining specific segments\n\n#### Description\n\nWhen using the `join()` method on GPX track segments, the operation doesn't work correctly in certain cases. After splitting a track and then joining segments back together, the resulting track doesn't match the original.\n\n#### Steps/Code to Reproduce\n\n```python\nimport gpxpy\n\n# Load a GPX file\nwith open('test_file.gpx') as f:\n    gpx = gpxpy.parse(f)\n\ntrack = gpx.tracks[1]\noriginal_track = track.clone()\n\n# Split the track into segments\ntrack.split(0, 10)\ntrack.split(1, 20)\nprint(f\"After splitting: {len(track.segments)} segments\")\n\n# Join segments back\ntrack.join(1)\nprint(f\"After first join: {len(track.segments)} segments\")\ntrack.join(0)\nprint(f\"After second join: {len(track.segments)} segments\")\n\n# Check if track matches original\nprint(f\"Track matches original: {track == original_track}\")\n```\n\nExpected: The track should be identical to the original after splitting and joining back.\nActual: The track doesn't match the original, indicating segments weren't joined properly.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tkrajina__gpxpy.09fc46b3.func_pm_ctrl_invert_if__by8sjapi",
+  "environment": "jyangballin/swesmith.x86_64.tkrajina_1776_gpxpy.09fc46b3",
+  "fail_to_pass": [
+   "test.py::GPXTests::test_split_and_join"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

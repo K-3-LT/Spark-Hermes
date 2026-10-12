@@ -1,0 +1,27 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0077-p01",
+ "round_id": "r0077",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nSignalGroup name property returns lowercase instead of original case\n\n#### Description\n\nWhen accessing the `name` property of a `SignalGroup` object, it returns the name in lowercase instead of preserving the original case from the DBC file.\n\n#### Steps/Code to Reproduce\n\n```python\nimport cantools\n\n# Load a DBC file with signal groups\ndb = cantools.database.load_file('tests/files/dbc/sig_groups.dbc')\nmessage = db.get_message_by_name('SGMsg_m')\nsignal_group = message.signal_groups[0]\n\nprint(f\"Expected: 'Sub2'\")\nprint(f\"Actual: '{signal_group.name}'\")\n```\n\nThis will output:\n```\nExpected: 'Sub2'\nActual: 'sub2'\n```\n\nThe signal group name should preserve the original case as defined in the DBC file, but instead returns a lowercase version.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "cantools__cantools.0c6a7871.func_basic__w1tltaof",
+  "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871",
+  "fail_to_pass": [
+   "tests/test_database.py::CanToolsDatabaseTest::test_dbc_issue_228_empty_signal_groups",
+   "tests/test_database.py::CanToolsDatabaseTest::test_dbc_with_signal_groups",
+   "tests/test_database.py::CanToolsDatabaseTest::test_long_names_dbc"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}
