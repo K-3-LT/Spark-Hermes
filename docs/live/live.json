@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791838445.9583387,
+ "updated": 1791838629.3243108,
  "round_id": "r0076",
  "stage": "evaluate",
  "stages": [
@@ -283,7 +283,7 @@
  },
  "rejected": {},
  "progress": {
-  "done": 47,
+  "done": 50,
   "total": 60,
   "by_surface": {
    "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
@@ -434,9 +434,9 @@
     }
    },
    "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
-    "n": 5,
-    "verified": 5,
-    "credit": 0.7222,
+    "n": 6,
+    "verified": 6,
+    "credit": 0.7685,
     "tasks": {
      "swe-fix-r0076-01": {
       "credit": 1.0,
@@ -447,6 +447,13 @@
      },
      "swe-fix-r0076-03": {
       "credit": 0.6667,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0076-05": {
+      "credit": 1.0,
       "verified": true,
       "void": false,
       "dq": false,
@@ -517,6 +524,27 @@
      },
      "swe-fix-r0076-00": {
       "credit": 0.5556,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     }
+    }
+   },
+   "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
+    "n": 2,
+    "verified": 2,
+    "credit": 1.0,
+    "tasks": {
+     "swe-fix-r0076-01": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0076-00": {
+      "credit": 1.0,
       "verified": true,
       "void": false,
       "dq": false,
@@ -676,6 +704,7 @@
    "swe-fix-r0076-00": {
     "credit": 1.0,
     "by": [
+     "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
      "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
      "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg"
@@ -687,6 +716,7 @@
    "swe-fix-r0076-01": {
     "credit": 1.0,
     "by": [
+     "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
      "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
      "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ"
     ],
@@ -729,6 +759,7 @@
    "swe-fix-r0076-05": {
     "credit": 1.0,
     "by": [
+     "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ",
      "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg"
     ],
     "fixed": null,
