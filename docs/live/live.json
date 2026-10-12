@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791810722.2101667,
+ "updated": 1791810940.9596844,
  "round_id": "r0074",
  "stage": "evaluate",
  "stages": [
@@ -484,6 +484,14 @@
   {
    "stage": "evaluate_local_launch",
    "t": 1791809944.554078
+  },
+  {
+   "stage": "resume",
+   "t": 1791810895.9228275
+  },
+  {
+   "stage": "evaluate_local_launch",
+   "t": 1791810895.9250026
   }
  ],
  "window": {
@@ -741,10 +749,357 @@
  },
  "rejected": {},
  "progress": {
-  "done": 32,
+  "done": 35,
   "total": 60,
-  "by_surface": {},
-  "best": {}
+  "by_surface": {
+   "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
+    "n": 6,
+    "verified": 4,
+    "credit": 0.4286,
+    "tasks": {
+     "swe-fix-r0074-09": {
+      "credit": 0.5,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-03": {
+      "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-05": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-00": {
+      "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-10": {
+      "credit": 0.5,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-02": {
+      "credit": 0.5714,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     }
+    }
+   },
+   "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": {
+    "n": 6,
+    "verified": 4,
+    "credit": 0.5417,
+    "tasks": {
+     "swe-fix-r0074-09": {
+      "credit": 0.5,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-03": {
+      "credit": 0.75,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-05": {
+      "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-00": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-10": {
+      "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-02": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     }
+    }
+   },
+   "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
+    "n": 6,
+    "verified": 6,
+    "credit": 0.9339,
+    "tasks": {
+     "swe-fix-r0074-09": {
+      "credit": 0.9164,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-03": {
+      "credit": 0.9659,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-05": {
+      "credit": 0.9985,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-00": {
+      "credit": 0.9373,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-10": {
+      "credit": 0.9146,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-02": {
+      "credit": 0.8705,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     }
+    }
+   },
+   "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
+    "n": 6,
+    "verified": 5,
+    "credit": 0.6667,
+    "tasks": {
+     "swe-fix-r0074-09": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-03": {
+      "credit": 0.5,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-05": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-00": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-10": {
+      "credit": 0.5,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-02": {
+      "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     }
+    }
+   },
+   "null": {
+    "n": 6,
+    "verified": 5,
+    "credit": 0.5933,
+    "tasks": {
+     "swe-fix-r0074-09": {
+      "credit": 0.5,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-03": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-05": {
+      "credit": 0.75,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-00": {
+      "credit": 0.6667,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-10": {
+      "credit": 0.5,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-02": {
+      "credit": 0.1429,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     }
+    }
+   },
+   "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
+    "n": 5,
+    "verified": 4,
+    "credit": 0.625,
+    "tasks": {
+     "swe-fix-r0074-09": {
+      "credit": 0.0,
+      "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-03": {
+      "credit": 0.5,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-05": {
+      "credit": 0.625,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-00": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-02": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     }
+    }
+   }
+  },
+  "best": {
+   "swe-fix-r0074-00": {
+    "credit": 1.0,
+    "by": [
+     "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
+     "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6"
+    ],
+    "fixed": null,
+    "tests": null,
+    "baseline": 0.6667
+   },
+   "swe-fix-r0074-02": {
+    "credit": 1.0,
+    "by": [
+     "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
+     "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK"
+    ],
+    "fixed": null,
+    "tests": null,
+    "baseline": 0.1429
+   },
+   "swe-fix-r0074-03": {
+    "credit": 0.9659,
+    "by": [
+     "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
+    ],
+    "fixed": null,
+    "tests": null,
+    "baseline": 1.0
+   },
+   "swe-fix-r0074-05": {
+    "credit": 1.0,
+    "by": [
+     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
+     "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE"
+    ],
+    "fixed": null,
+    "tests": null,
+    "baseline": 0.75
+   },
+   "swe-fix-r0074-09": {
+    "credit": 1.0,
+    "by": [
+     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6"
+    ],
+    "fixed": null,
+    "tests": null,
+    "baseline": 0.5
+   },
+   "swe-fix-r0074-10": {
+    "credit": 0.9146,
+    "by": [
+     "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
+    ],
+    "fixed": null,
+    "tests": null,
+    "baseline": 0.5
+   }
+  }
  },
  "crown": null,
  "scores": null,
