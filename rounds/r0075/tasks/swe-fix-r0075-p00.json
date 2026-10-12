@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0075-p00",
+ "round_id": "r0075",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nTimezone cast parsing broken for expressions with aliases\n\n#### Description\n\nWhen parsing SQL statements that contain timezone cast expressions (`AT TIME ZONE`) followed by aliases, the parser incorrectly handles the grouping logic and fails to recognize the alias properly.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlparse\n\n# This should parse correctly and recognize 'foo' as an alias\nsql = \"select bar at time zone 'UTC' as foo\"\nparsed = sqlparse.parse(sql)[0]\n\n# Check if the last token has an alias\nprint(\"Has alias:\", parsed.tokens[-1].has_alias())\nprint(\"Alias:\", parsed.tokens[-1].get_alias())\n\n# Expected: Has alias: True, Alias: foo\n# Actual: Has alias: False, Alias: None\n```\n\nThe timezone cast expression should be properly grouped so that the `AS foo` part is recognized as an alias for the entire `bar at time zone 'UTC'` expression.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "andialbrecht__sqlparse.e57923b3.func_basic__ewek1pq9",
+  "environment": "jyangballin/swesmith.x86_64.andialbrecht_1776_sqlparse.e57923b3",
+  "fail_to_pass": [
+   "tests/test_regressions.py::test_issue489_tzcasts"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

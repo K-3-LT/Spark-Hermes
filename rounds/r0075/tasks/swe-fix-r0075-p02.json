@@ -1,0 +1,27 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0075-p02",
+ "round_id": "r0075",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n### Issue: Unexpected Behavior in DuckDB Dialect\n\n#### Description\n\nIt seems there is an issue with the DuckDB dialect when handling certain SQL expressions. Specifically, the behavior of array indexing and prefix aliases appears to be inconsistent with expected results.\n\n#### Steps to Reproduce\n\n1. **Array Indexing Issue:**\n   - Execute the following query:\n     ```sql\n     SELECT some_arr[1] AS first FROM blah\n     ```\n   - Expected behavior: The query should correctly interpret the array index.\n   - Observed behavior: The array index does not seem to be applied correctly, leading to unexpected results.\n\n2. **Prefix Aliases Issue:**\n   - Execute the following query:\n     ```sql\n     SELECT foo: 1\n     ```\n   - Expected behavior: The query should interpret the prefix alias correctly, resulting in `1 AS foo`.\n   - Observed behavior: The prefix alias is not being applied as expected, causing discrepancies in the output.\n\n#### Additional Information\n\nThese issues were observed after recent changes to the DuckDB dialect. It appears that the handling of array indices and prefix aliases may have been inadvertently affected. Further investigation is needed to ensure that these features work as intended across different SQL expressions.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.lm_rewrite__xfsiya9r",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/dialects/test_duckdb.py::TestDuckDB::test_array_index",
+   "tests/dialects/test_duckdb.py::TestDuckDB::test_duckdb",
+   "tests/dialects/test_duckdb.py::TestDuckDB::test_prefix_aliases"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

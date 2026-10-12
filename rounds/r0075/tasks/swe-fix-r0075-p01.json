@@ -1,0 +1,27 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0075-p01",
+ "round_id": "r0075",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n# Duplicate setter for trHeight_hRule in CT_TrPr class\n\n## Description\nI found a bug in the `CT_TrPr` class where the `trHeight_hRule` setter is duplicated. This causes issues when trying to change the height rule of a table row.\n\n## Steps to reproduce\n\n```python\nfrom docx import Document\nfrom docx.enum.table import WD_ROW_HEIGHT_RULE\n\n# Create a new document\ndoc = Document()\n\n# Add a table\ntable = doc.add_table(rows=2, cols=2)\n\n# Try to set the height rule for the first row\nrow = table.rows[0]\nrow.height_rule = WD_ROW_HEIGHT_RULE.AUTO  # This fails\n```\n\n## Expected behavior\nThe height rule of the row should be set to AUTO.\n\n## Actual behavior\nThe height rule is not set correctly. When inspecting the XML, the `w:hRule` attribute is not properly updated.\n\n## Additional information\nThis issue affects all operations that try to modify the height rule of table rows. The problem appears to be in the `CT_TrPr` class in the `table.py` file, where there are two `@trHeight_hRule.setter` decorators defined one after another, which causes Python to only recognize the second one and ignore the first.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.lm_rewrite__4ptt0wt4",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/test_table.py::Describe_Row::it_can_change_its_height_rule[w:tr-None-w:tr/w:trPr]",
+   "tests/test_table.py::Describe_Row::it_can_change_its_height_rule[w:tr/w:trPr-None-w:tr/w:trPr]",
+   "tests/test_table.py::Describe_Row::it_can_change_its_height_rule[w:tr/w:trPr/w:trHeight-None-w:tr/w:trPr/w:trHeight]"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

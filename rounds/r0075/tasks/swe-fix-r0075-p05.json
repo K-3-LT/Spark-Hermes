@@ -1,0 +1,28 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0075-p05",
+ "round_id": "r0075",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nTimestamp parsing broken for common time formats\n\n#### Description\n\nThe timestamp parser in the plot subcommand is failing to parse common time formats that were previously working. Inputs like `'20'` for seconds, `'6.2.'` for day/month, `'12:43:'` for hours/minutes, and `'2021-04'` for year/month are now throwing parsing errors.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom cantools.subparsers.plot import TimestampParser\nimport datetime\n\nparser = TimestampParser(None)\nfirst_timestamp = datetime.datetime(2021, 1, 17, 0, 0, 0)\n\n# These should work but now fail:\nparser.parse_user_input_absolute_time('20', first_timestamp)  # seconds\nparser.parse_user_input_absolute_time('6.2.', first_timestamp)  # day.month.\nparser.parse_user_input_absolute_time('12:43:', first_timestamp)  # hour:minute:\nparser.parse_user_input_absolute_time('2021-04', first_timestamp)  # year-month\n```\n\nAll of these now raise ValueError with the message:\n```\nFailed to parse absolute time 'XX'.\n\nPlease note that an input like 'xx.xx' is ambiguous. It could be either 'HH.MM' or 'MM.SS'. Please specify what you want by adding a leading or trailing colon: 'HH.MM:' or ':MM.SS' (or 'MM-SS.').\n```\n\nThe error message itself seems inconsistent - it mentions colons in the suggestion but then shows 'MM-SS.' with a dash and period.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "cantools__cantools.0c6a7871.func_basic__c57qblwd",
+  "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871",
+  "fail_to_pass": [
+   "tests/test_plot.py::CanToolsPlotTest::test_start_absolute_seconds",
+   "tests/test_plot.py::CanToolsPlotTest::test_stop_is_based_on_start_and_xlabel_shows_start",
+   "tests/test_plot_unittests.py::CanToolsPlotUnittests::test_parse_user_input_absolute_time",
+   "tests/test_plot_unittests.py::CanToolsPlotUnittests::test_parse_user_input_absolute_time_output_formats"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}
