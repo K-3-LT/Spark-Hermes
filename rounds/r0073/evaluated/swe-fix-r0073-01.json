@@ -1,0 +1,45 @@
+{
+ "schema": "sh-instance-v2",
+ "task_id": "swe-fix-r0073-01",
+ "family": "swe_fix",
+ "behaviour": "act",
+ "round_id": "r0073",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nBoolean field serialization returns inverted values\n\n#### Description\n\nThe Boolean field is returning inverted boolean values during serialization. Values that should serialize to `True` are returning `False` and vice versa.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom marshmallow import Schema, fields\n\nclass MySchema(Schema):\n    has_items = fields.Boolean()\n\nschema = MySchema()\n\n# Empty list should serialize to False, but returns True\ndata = schema.dump({'has_items': []})\nprint(f\"Empty list: {data['has_items']}\")  # Expected: False, Got: True\n\n# Non-empty list should serialize to True, but returns False  \ndata = schema.dump({'has_items': [1]})\nprint(f\"Non-empty list: {data['has_items']}\")  # Expected: True, Got: False\n\n# Test with other values\ndata = schema.dump({'has_items': {}})\nprint(f\"Empty dict: {data['has_items']}\")  # Expected: False, Got: True\n\ndata = schema.dump({'has_items': {1: 1}})\nprint(f\"Non-empty dict: {data['has_items']}\")  # Expected: True, Got: False\n```\n\nThe Boolean field appears to be inverting the truthiness of values during serialization. This affects any schema that uses Boolean fields for serializing data.\n</issue>\n",
+ "fixture": {},
+ "setup_commands": [],
+ "protected_paths": [
+  "pyproject.toml",
+  "tests/__init__.py",
+  "tests/base.py",
+  "tests/conftest.py",
+  "tests/foo_serializer.py",
+  "tests/mypy_test_cases/test_validation_error.py",
+  "tests/test_decorators.py",
+  "tests/test_deserialization.py",
+  "tests/test_error_store.py",
+  "tests/test_exceptions.py",
+  "tests/test_fields.py",
+  "tests/test_options.py",
+  "tests/test_registry.py",
+  "tests/test_utils.py",
+  "tests/test_validate.py",
+  "tests/test_version_attributes.py",
+  "tox.ini"
+ ],
+ "commands": [],
+ "published": {
+  "predicates": []
+ },
+ "withheld_commitment": "hmac-sha256:9b88ee168c069a8a2462475c8773e0ef73af1845d5d091a46a0468d9ad317b9f",
+ "image": "swe-task:360b922e24510939",
+ "network": "none",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "workdir": "/testbed",
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "requires_self_check": false
+}
