@@ -1,0 +1,28 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0073-p05",
+ "round_id": "r0073",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nIssues with next_paragraph_style and get_style_id functionality\n\nDescription\n\nI've encountered some issues with the paragraph style and style ID functionality in python-docx. There are two main problems:\n\n1. The `next_paragraph_style` property in `ParagraphStyle` class is not working correctly. When trying to get the next paragraph style, it returns the current style object instead of the actual next style. This happens when the next_style_elm is None or when it's a paragraph style.\n\n2. The `get_style_id` method in the `Styles` class is returning incorrect values. When passing None as the style_or_name parameter, it returns 0 instead of None. Additionally, when passing a style object or style name, it ignores the style_type parameter and passes None instead.\n\nTo reproduce the first issue:\n```python\nfrom docx import Document\n\ndoc = Document()\nstyle = doc.styles['Normal']\n# This should return the next style, but returns the current style instead\nnext_style = style.next_paragraph_style\nprint(next_style.name)  # Prints 'Normal' instead of the actual next style\n```\n\nTo reproduce the second issue:\n```python\nfrom docx import Document\n\ndoc = Document()\nstyles = doc.styles\n# This should return None but returns 0\nstyle_id = styles.get_style_id(None, 'paragraph')\nprint(style_id)  # Prints 0 instead of None\n\n# This should validate the style_type but doesn't\nstyle = doc.styles['Heading 1']\nstyle_id = styles.get_style_id(style, 'character')  # Should validate style_type but doesn't\n```\n\nThese issues can cause problems when trying to work with style inheritance or when validating style types in documents.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.combine_module__9hek9pb6",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/styles/test_style.py::DescribeParagraphStyle::it_knows_its_next_paragraph_style[next_get_fixture0]",
+   "tests/styles/test_styles.py::DescribeStyles::and_it_can_get_a_style_id_from_a_style_name",
+   "tests/styles/test_styles.py::DescribeStyles::but_it_returns_None_for_a_style_or_name_of_None",
+   "tests/styles/test_styles.py::DescribeStyles::it_can_get_a_style_id_from_a_style"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

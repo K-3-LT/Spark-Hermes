@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0073-p03",
+ "round_id": "r0073",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n# OAuth1 Client fails to handle SIGNATURE_TYPE_QUERY properly\n\n### Feature or Bugfix\n\n- Bugfix\n\n### Purpose\n\nThe OAuth1 Client class is not properly handling the SIGNATURE_TYPE_QUERY signature type. When this signature type is specified, the code path for preparing the request URI with query parameters is missing, causing the client to fail.\n\n### Detail\n\nWhen using the OAuth1 Client with SIGNATURE_TYPE_QUERY, the prepare_request method doesn't properly handle this signature type, resulting in an error.\n\nHow to reproduce:\n\n```python\nfrom oauthlib.oauth1 import Client\nfrom oauthlib.oauth1.rfc5849 import SIGNATURE_TYPE_QUERY\n\n# Create a client with query signature type\nclient = Client(\n    'client_key',\n    client_secret='client_secret',\n    signature_type=SIGNATURE_TYPE_QUERY\n)\n\n# This will fail\nuri, headers, body = client.prepare_request('https://example.com/resource')\n\n# The error occurs because the code path for SIGNATURE_TYPE_QUERY is missing\n```\n\nThe client fails to prepare the request properly when SIGNATURE_TYPE_QUERY is specified, which should add the OAuth parameters to the query string of the URI instead of using an Authorization header.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "oauthlib__oauthlib.1fd52536.func_pm_remove_cond__ebgnwplb",
+  "environment": "jyangballin/swesmith.x86_64.oauthlib_1776_oauthlib.1fd52536",
+  "fail_to_pass": [
+   "tests/oauth1/rfc5849/test_client.py::SignatureTypeTest::test_invalid_signature_type",
+   "tests/oauth1/rfc5849/test_client.py::SignatureTypeTest::test_params_in_query"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

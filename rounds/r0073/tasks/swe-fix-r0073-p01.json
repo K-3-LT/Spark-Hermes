@@ -1,0 +1,28 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0073-p01",
+ "round_id": "r0073",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nContainsOnly validator returns truncated sequence\n\n#### Description\n\nThe `ContainsOnly` validator is unexpectedly truncating the input sequence by removing the last element, even when all elements are valid choices.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom marshmallow import validate\n\n# Test with list\nvalidator = validate.ContainsOnly([1, 2, 3])\nresult = validator([1, 2])\nprint(f\"Expected: [1, 2], Got: {result}\")\n\n# Test with tuple  \nvalidator = validate.ContainsOnly((1, 2, 3))\nresult = validator((1, 2))\nprint(f\"Expected: (1, 2), Got: {result}\")\n\n# Test with string\nvalidator = validate.ContainsOnly('abc')\nresult = validator('ab')\nprint(f\"Expected: 'ab', Got: '{result}'\")\n\n# Test with unhashable types\nvalidator = validate.ContainsOnly([[1], [2], [3]])\nresult = validator([[1], [2]])\nprint(f\"Expected: [[1], [2]], Got: {result}\")\n```\n\nThe validator should return the original input sequence unchanged when all elements are valid, but instead it's returning the sequence with the last element removed.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "marshmallow-code__marshmallow.9716fc62.func_basic__e139u7bq",
+  "environment": "jyangballin/swesmith.x86_64.marshmallow-code_1776_marshmallow.9716fc62",
+  "fail_to_pass": [
+   "tests/test_validate.py::test_contains_only_in_string",
+   "tests/test_validate.py::test_contains_only_unhashable_types",
+   "tests/test_validate.py::test_containsonly_in_list",
+   "tests/test_validate.py::test_containsonly_in_tuple"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

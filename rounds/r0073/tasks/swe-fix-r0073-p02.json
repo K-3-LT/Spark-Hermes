@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0073-p02",
+ "round_id": "r0073",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nSetting right_margin affects left_margin instead\n\n#### Description\n\nWhen setting the `right_margin` property on a section, it incorrectly modifies the left margin instead of the right margin.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom docx import Document\nfrom docx.shared import Inches\n\n# Create a new document\ndoc = Document()\nsection = doc.sections[0]\n\n# Set right margin to 0.5 inches\nsection.right_margin = Inches(0.5)\n\n# Check the actual margins\nprint(f\"Left margin: {section.left_margin}\")\nprint(f\"Right margin: {section.right_margin}\")\n\n# Expected: Left margin should be unchanged, right margin should be 0.5 inches\n# Actual: Left margin gets set to 0.5 inches, right margin remains unchanged\n```\n\nThe issue occurs when trying to set the right margin - instead of updating the right margin value, it updates the left margin value.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.func_basic__dv6wm3wc",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/test_section.py::DescribeSection::it_can_change_its_page_margins[w:sectPr-right_margin-457200-w:sectPr/w:pgMar{w:right=720}]"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}
