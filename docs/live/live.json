@@ -1,8 +1,8 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791778795.831871,
+ "updated": 1791778877.4415529,
  "round_id": "r0071",
- "stage": "close",
+ "stage": "done",
  "stages": [
   "open",
   "window",
@@ -56,6 +56,26 @@
   {
    "stage": "evaluate",
    "t": 1791778795.8130345
+  },
+  {
+   "stage": "close",
+   "t": 1791778811.054424
+  },
+  {
+   "stage": "crown",
+   "t": 1791778811.0688848
+  },
+  {
+   "stage": "merge",
+   "t": 1791778848.5488517
+  },
+  {
+   "stage": "announce",
+   "t": 1791778869.728526
+  },
+  {
+   "stage": "export",
+   "t": 1791778875.5585
   }
  ],
  "window": {
@@ -156,84 +176,84 @@
  },
  "standings": {
   "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
-   "score": 0.083376,
-   "weight": 0.15246426847287037,
-   "mean_d": 0.083376,
-   "delta_c": 0.019953994884357507,
+   "score": 0.101233,
+   "weight": 0.11197461261338988,
+   "mean_d": 0.101233,
+   "delta_c": 0.04299055638317922,
    "n": 56
   },
   "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
-   "score": 0.085757,
-   "weight": 0.15681824831399857,
-   "mean_d": 0.085757,
-   "delta_c": 0.02604194740068575,
+   "score": 0.128614,
+   "weight": 0.14226095074391282,
+   "mean_d": 0.128614,
+   "delta_c": 0.0683426518192625,
    "n": 56
   },
   "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": {
-   "score": 0.06622,
-   "weight": 0.12109220708925202,
-   "mean_d": 0.06622,
-   "delta_c": 0.004390122675896897,
+   "score": 0.093006,
+   "weight": 0.10287466360496024,
+   "mean_d": 0.093006,
+   "delta_c": 0.03795163231976256,
    "n": 56
   },
   "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
-   "score": 0.070196,
-   "weight": 0.12836285969249672,
-   "mean_d": 0.070196,
-   "delta_c": 0.015143474249930726,
+   "score": 0.0804,
+   "weight": 0.08893106846696776,
+   "mean_d": 0.0804,
+   "delta_c": 0.03186816709086637,
    "n": 56
   },
   "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf": {
-   "score": 0.012543,
-   "weight": 0.022936568310487588,
-   "mean_d": 0.012543,
+   "score": 0.044048,
+   "weight": 0.04872183711235069,
+   "mean_d": 0.044048,
+   "delta_c": 0.0,
+   "n": 50
+  },
+  "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
+   "score": 0.041667,
+   "weight": 0.04608819440066102,
+   "mean_d": 0.041667,
    "delta_c": 0.0,
    "n": 56
   },
   "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
-   "score": 0.086876,
-   "weight": 0.15886449083488158,
-   "mean_d": 0.086876,
-   "delta_c": 0.0094355829165447,
+   "score": 0.207507,
+   "weight": 0.2295251147310333,
+   "mean_d": 0.207507,
+   "delta_c": 0.12540397281725857,
+   "n": 56
+  },
+  "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
+   "score": 0.021258,
+   "weight": 0.023513639968542294,
+   "mean_d": 0.021258,
+   "delta_c": 0.0,
+   "n": 56
+  },
+  "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": {
+   "score": 0.059269,
+   "weight": 0.06555790419115314,
+   "mean_d": 0.059269,
+   "delta_c": 0.0037156426317708907,
    "n": 56
   },
   "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
-   "score": -0.004902,
-   "weight": 0.0,
-   "mean_d": -0.004902,
+   "score": 0.068627,
+   "weight": 0.07590886114033078,
+   "mean_d": 0.068627,
    "delta_c": 0.0,
    "n": 34
   },
-  "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": {
-   "score": 0.011054,
-   "weight": 0.020213730854191963,
-   "mean_d": 0.011054,
-   "delta_c": 0.0,
-   "n": 56
-  },
-  "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
-   "score": 0.026667,
-   "weight": 0.048764208493643664,
-   "mean_d": 0.026667,
-   "delta_c": 0.0,
-   "n": 50
-  },
-  "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
-   "score": 0.02381,
-   "weight": 0.04353979841128195,
-   "mean_d": 0.02381,
-   "delta_c": 0.0,
-   "n": 50
-  },
   "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
-   "score": 0.080357,
-   "weight": 0.14694361952689555,
-   "mean_d": 0.080357,
+   "score": 0.058442,
+   "weight": 0.06464315302669812,
+   "mean_d": 0.058442,
    "delta_c": 0.0,
-   "n": 16
+   "n": 22
   }
  },
- "last_round": "r0070",
+ "last_round": "r0071",
  "tasks": 6,
  "active": {
   "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
@@ -933,8 +953,239 @@
    }
   }
  },
- "crown": null,
- "scores": null,
+ "crown": {
+  "schema": "sh-crown-v1",
+  "round_id": "r0071",
+  "king": "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb",
+  "standings": {
+   "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
+    "n": 6,
+    "verified": 0,
+    "dq": 0,
+    "credit": 0.033333,
+    "delta": 0.0
+   },
+   "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
+    "n": 6,
+    "verified": 2,
+    "dq": 0,
+    "credit": 0.366667,
+    "delta": 0.333333,
+    "rank": 2
+   },
+   "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": {
+    "n": 6,
+    "verified": 0,
+    "dq": 0,
+    "credit": 0.033333,
+    "delta": 0.0
+   },
+   "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
+    "n": 6,
+    "verified": 1,
+    "dq": 0,
+    "credit": 0.2,
+    "delta": 0.166667,
+    "rank": 5
+   },
+   "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
+    "n": 6,
+    "verified": 1,
+    "dq": 0,
+    "credit": 0.2,
+    "delta": 0.166667,
+    "rank": 4
+   },
+   "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
+    "n": 6,
+    "verified": 6,
+    "dq": 0,
+    "credit": 0.909222,
+    "delta": 0.875888,
+    "rank": 1
+   },
+   "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
+    "n": 6,
+    "verified": 1,
+    "dq": 0,
+    "credit": 0.2,
+    "delta": 0.166667,
+    "rank": 6
+   },
+   "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
+    "n": 6,
+    "verified": 0,
+    "dq": 0,
+    "credit": 0.033333,
+    "delta": 0.0
+   },
+   "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
+    "n": 6,
+    "verified": 0,
+    "dq": 0,
+    "credit": 0.033333,
+    "delta": 0.0
+   },
+   "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": {
+    "n": 6,
+    "verified": 2,
+    "dq": 0,
+    "credit": 0.333333,
+    "delta": 0.3,
+    "rank": 3
+   }
+  },
+  "rule": "highest paired delta vs baseline on this round's instances, > 0, \u2265 4 paired, not disqualified, not a near-duplicate of another author's earlier bundle; a tie does not dethrone the incumbent; other ties go to the strategy that first appeared earliest, then a round-keyed hash"
+ },
+ "scores": {
+  "weights": {
+   "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": 0.11197461261338988,
+   "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": 0.14226095074391282,
+   "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": 0.10287466360496024,
+   "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": 0.08893106846696776,
+   "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf": 0.04872183711235069,
+   "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": 0.04608819440066102,
+   "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": 0.2295251147310333,
+   "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": 0.023513639968542294,
+   "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": 0.06555790419115314,
+   "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": 0.07590886114033078,
+   "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": 0.06464315302669812
+  },
+  "king": "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb",
+  "per_hotkey": {
+   "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
+    "n": 56,
+    "score": 0.101233,
+    "mean_d": 0.101233,
+    "se": 0.045502,
+    "delta_c": 0.04299055638317922,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
+    "n": 56,
+    "score": 0.128614,
+    "mean_d": 0.128614,
+    "se": 0.047087,
+    "delta_c": 0.0683426518192625,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": {
+    "n": 56,
+    "score": 0.093006,
+    "mean_d": 0.093006,
+    "se": 0.043011,
+    "delta_c": 0.03795163231976256,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
+    "n": 56,
+    "score": 0.0804,
+    "mean_d": 0.0804,
+    "se": 0.037915,
+    "delta_c": 0.03186816709086637,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf": {
+    "n": 50,
+    "score": 0.044048,
+    "mean_d": 0.044048,
+    "se": 0.043343,
+    "delta_c": 0.0,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
+    "n": 56,
+    "score": 0.041667,
+    "mean_d": 0.041667,
+    "se": 0.04715,
+    "delta_c": 0.0,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
+    "n": 56,
+    "score": 0.207507,
+    "mean_d": 0.207507,
+    "se": 0.064143,
+    "delta_c": 0.12540397281725857,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
+    "n": 56,
+    "score": 0.021258,
+    "mean_d": 0.021258,
+    "se": 0.034443,
+    "delta_c": 0.0,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": {
+    "n": 56,
+    "score": 0.059269,
+    "mean_d": 0.059269,
+    "se": 0.043401,
+    "delta_c": 0.0037156426317708907,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
+    "n": 34,
+    "score": 0.068627,
+    "mean_d": 0.068627,
+    "se": 0.054104,
+    "delta_c": 0.0,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   },
+   "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
+    "n": 22,
+    "score": 0.058442,
+    "mean_d": 0.058442,
+    "se": 0.046675,
+    "delta_c": 0.0,
+    "gate": true,
+    "overfit_rate": 0.0,
+    "dq": 0,
+    "reason": null
+   }
+  },
+  "family_stats": {
+   "swe_fix": {
+    "null_p": 0.10714285714285714,
+    "canon_p": 0.16666666666666666,
+    "null_credit": 0.277,
+    "canon_credit": 0.2889,
+    "label": "frontier"
+   }
+  },
+  "commitments_ok": true
+ },
  "queue": [
   {
    "round_id": "r0072",
@@ -944,148 +1195,6 @@
   }
  ],
  "history": [
-  {
-   "round_id": "r0049",
-   "closed_at": 1790955830.8261895,
-   "window": {
-    "opens_at": 1790938856.737487,
-    "closes_at": 1790946056.737487,
-    "seconds": 7200
-   },
-   "episodes": 330,
-   "king": "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg",
-   "weights": {
-    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": 0.18682380838848114,
-    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": 0.18085817938127058,
-    "5CovGSVyGsbo4QfcWVBCM2DJj6RZq623B3NLRXr4E6XcPyXf": 0.1968928210117985,
-    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": 0.2002487289691924,
-    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": 0.10739549839228296,
-    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": 0.1277809638569744,
-    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": 0.0
-   },
-   "scores": {
-    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
-     "score": 0.144965,
-     "weight": 0.18682380838848114,
-     "mean_d": 0.144965,
-     "delta_c": 0.05889180007567735,
-     "n": 48
-    },
-    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
-     "score": 0.140336,
-     "weight": 0.18085817938127058,
-     "mean_d": 0.140336,
-     "delta_c": 0.06960728231127346,
-     "n": 48
-    },
-    "5CovGSVyGsbo4QfcWVBCM2DJj6RZq623B3NLRXr4E6XcPyXf": {
-     "score": 0.152778,
-     "weight": 0.1968928210117985,
-     "mean_d": 0.152778,
-     "delta_c": 0.0,
-     "n": 12
-    },
-    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
-     "score": 0.155382,
-     "weight": 0.2002487289691924,
-     "mean_d": 0.155382,
-     "delta_c": 0.08044045982539583,
-     "n": 48
-    },
-    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
-     "score": 0.083333,
-     "weight": 0.10739549839228296,
-     "mean_d": 0.083333,
-     "delta_c": 0.01346234896852469,
-     "n": 48
-    },
-    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
-     "score": 0.099151,
-     "weight": 0.1277809638569744,
-     "mean_d": 0.099151,
-     "delta_c": 0.022593818410011915,
-     "n": 36
-    },
-    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
-     "score": -0.015046,
-     "weight": 0.0,
-     "mean_d": -0.015046,
-     "delta_c": 0.0,
-     "n": 36
-    }
-   },
-   "crown": {
-    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
-     "n": 6,
-     "verified": 2,
-     "dq": 0,
-     "credit": 0.416667,
-     "delta": 0.055556,
-     "rank": 5
-    },
-    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
-     "n": 6,
-     "verified": 2,
-     "dq": 0,
-     "credit": 0.416667,
-     "delta": 0.055556,
-     "rank": 4
-    },
-    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
-     "n": 6,
-     "verified": 2,
-     "dq": 0,
-     "credit": 0.416667,
-     "delta": 0.055556,
-     "rank": 3
-    },
-    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
-     "n": 6,
-     "verified": 2,
-     "dq": 0,
-     "credit": 0.416667,
-     "delta": 0.055556,
-     "rank": 2
-    },
-    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
-     "n": 6,
-     "verified": 3,
-     "dq": 0,
-     "credit": 0.583333,
-     "delta": 0.222222,
-     "rank": 1
-    },
-    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
-     "n": 6,
-     "verified": 2,
-     "dq": 0,
-     "credit": 0.416667,
-     "delta": 0.055556,
-     "rank": 6
-    }
-   },
-   "commitments_ok": true,
-   "sft_rows": 3,
-   "dpo_pairs": 2,
-   "hf": "https://huggingface.co/datasets/gittensor-model-hub/spark-hermes-rounds/tree/main/rounds/r0049",
-   "revealed": [
-    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
-    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
-    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
-    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb",
-    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc"
-   ],
-   "github": {
-    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": "dato-bitar",
-    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": "kaivaryn",
-    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": "kaivexa",
-    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": "harrythomasben",
-    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": "K-3-LT",
-    "5CovGSVyGsbo4QfcWVBCM2DJj6RZq623B3NLRXr4E6XcPyXf": "DripMicro",
-    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": "Tet-9"
-   },
-   "pr": 443
-  },
   {
    "round_id": "r0050",
    "closed_at": 1790972546.0235245,
@@ -4502,6 +4611,188 @@
     "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": "harrythomasben"
    },
    "pr": 636
+  },
+  {
+   "round_id": "r0071",
+   "closed_at": 1791778877.409828,
+   "window": {
+    "opens_at": 1791752821.871195,
+    "closes_at": 1791756421.871195,
+    "seconds": 3600
+   },
+   "episodes": 616,
+   "king": "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb",
+   "weights": {
+    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": 0.11197461261338988,
+    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": 0.14226095074391282,
+    "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": 0.10287466360496024,
+    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": 0.08893106846696776,
+    "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf": 0.04872183711235069,
+    "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": 0.04608819440066102,
+    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": 0.2295251147310333,
+    "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": 0.023513639968542294,
+    "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": 0.06555790419115314,
+    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": 0.07590886114033078,
+    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": 0.06464315302669812
+   },
+   "scores": {
+    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
+     "score": 0.101233,
+     "weight": 0.11197461261338988,
+     "mean_d": 0.101233,
+     "delta_c": 0.04299055638317922,
+     "n": 56
+    },
+    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
+     "score": 0.128614,
+     "weight": 0.14226095074391282,
+     "mean_d": 0.128614,
+     "delta_c": 0.0683426518192625,
+     "n": 56
+    },
+    "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": {
+     "score": 0.093006,
+     "weight": 0.10287466360496024,
+     "mean_d": 0.093006,
+     "delta_c": 0.03795163231976256,
+     "n": 56
+    },
+    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
+     "score": 0.0804,
+     "weight": 0.08893106846696776,
+     "mean_d": 0.0804,
+     "delta_c": 0.03186816709086637,
+     "n": 56
+    },
+    "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf": {
+     "score": 0.044048,
+     "weight": 0.04872183711235069,
+     "mean_d": 0.044048,
+     "delta_c": 0.0,
+     "n": 50
+    },
+    "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
+     "score": 0.041667,
+     "weight": 0.04608819440066102,
+     "mean_d": 0.041667,
+     "delta_c": 0.0,
+     "n": 56
+    },
+    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
+     "score": 0.207507,
+     "weight": 0.2295251147310333,
+     "mean_d": 0.207507,
+     "delta_c": 0.12540397281725857,
+     "n": 56
+    },
+    "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
+     "score": 0.021258,
+     "weight": 0.023513639968542294,
+     "mean_d": 0.021258,
+     "delta_c": 0.0,
+     "n": 56
+    },
+    "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": {
+     "score": 0.059269,
+     "weight": 0.06555790419115314,
+     "mean_d": 0.059269,
+     "delta_c": 0.0037156426317708907,
+     "n": 56
+    },
+    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
+     "score": 0.068627,
+     "weight": 0.07590886114033078,
+     "mean_d": 0.068627,
+     "delta_c": 0.0,
+     "n": 34
+    },
+    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
+     "score": 0.058442,
+     "weight": 0.06464315302669812,
+     "mean_d": 0.058442,
+     "delta_c": 0.0,
+     "n": 22
+    }
+   },
+   "crown": {
+    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
+     "n": 6,
+     "verified": 2,
+     "dq": 0,
+     "credit": 0.366667,
+     "delta": 0.333333,
+     "rank": 2
+    },
+    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
+     "n": 6,
+     "verified": 1,
+     "dq": 0,
+     "credit": 0.2,
+     "delta": 0.166667,
+     "rank": 5
+    },
+    "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
+     "n": 6,
+     "verified": 1,
+     "dq": 0,
+     "credit": 0.2,
+     "delta": 0.166667,
+     "rank": 4
+    },
+    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
+     "n": 6,
+     "verified": 6,
+     "dq": 0,
+     "credit": 0.909222,
+     "delta": 0.875888,
+     "rank": 1
+    },
+    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
+     "n": 6,
+     "verified": 1,
+     "dq": 0,
+     "credit": 0.2,
+     "delta": 0.166667,
+     "rank": 6
+    },
+    "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": {
+     "n": 6,
+     "verified": 2,
+     "dq": 0,
+     "credit": 0.333333,
+     "delta": 0.3,
+     "rank": 3
+    }
+   },
+   "commitments_ok": true,
+   "sft_rows": 6,
+   "dpo_pairs": 6,
+   "hf": "https://huggingface.co/datasets/gittensor-model-hub/spark-hermes-rounds/tree/main/rounds/r0071",
+   "revealed": [
+    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
+    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ",
+    "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK",
+    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
+    "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ",
+    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg",
+    "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE",
+    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc",
+    "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj"
+   ],
+   "github": {
+    "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": "dato-bitar",
+    "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": "harrythomasben",
+    "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": "ismayilovibadet802-svg",
+    "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": "widecloud",
+    "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": "kaivexa",
+    "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": "Tet-9",
+    "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": "kaivaryn",
+    "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": "e11734937-beep",
+    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": "K-3-LT",
+    "5DSD14t7dACJcd9f8rPdrkMVngRqLUnM3EnM3dHfHLZTHJGf": "FranDev132",
+    "5HbvMH2hCEecnyhMsUMSCo54mJia1ujJGRVwsfg3LbEWBsVj": "gold-tree-tech"
+   },
+   "pr": 647
   }
  ],
  "repo": "gittensor-model-hub/Spark-Hermes",
