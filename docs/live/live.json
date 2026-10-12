@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791811861.411999,
+ "updated": 1791812044.9383268,
  "round_id": "r0074",
  "stage": "evaluate",
  "stages": [
@@ -749,7 +749,7 @@
  },
  "rejected": {},
  "progress": {
-  "done": 51,
+  "done": 54,
   "total": 60,
   "by_surface": {
    "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
@@ -1145,10 +1145,17 @@
     }
    },
    "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
-    "n": 3,
-    "verified": 1,
-    "credit": 0.1845,
+    "n": 6,
+    "verified": 4,
+    "credit": 0.5923,
     "tasks": {
+     "swe-fix-r0074-09": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
      "swe-fix-r0074-03": {
       "credit": 0.125,
       "verified": false,
@@ -1156,9 +1163,23 @@
       "dq": false,
       "tests": null
      },
+     "swe-fix-r0074-05": {
+      "credit": 1.0,
+      "verified": true,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
      "swe-fix-r0074-00": {
       "credit": 0.0,
       "verified": false,
+      "void": false,
+      "dq": false,
+      "tests": null
+     },
+     "swe-fix-r0074-10": {
+      "credit": 1.0,
+      "verified": true,
       "void": false,
       "dq": false,
       "tests": null
@@ -1210,7 +1231,8 @@
     "by": [
      "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
      "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
-     "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE"
+     "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE",
+     "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc"
     ],
     "fixed": null,
     "tests": null,
@@ -1220,16 +1242,17 @@
     "credit": 1.0,
     "by": [
      "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh",
-     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6"
+     "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6",
+     "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc"
     ],
     "fixed": null,
     "tests": null,
     "baseline": 0.5
    },
    "swe-fix-r0074-10": {
-    "credit": 0.9146,
+    "credit": 1.0,
     "by": [
-     "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb"
+     "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc"
     ],
     "fixed": null,
     "tests": null,
