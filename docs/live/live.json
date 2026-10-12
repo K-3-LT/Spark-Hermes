@@ -1,8 +1,8 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791835328.8763754,
+ "updated": 1791835644.448143,
  "round_id": "r0076",
- "stage": "window",
+ "stage": "evaluate",
  "stages": [
   "open",
   "window",
@@ -24,6 +24,10 @@
   {
    "stage": "open",
    "t": 1791833826.360394
+  },
+  {
+   "stage": "window",
+   "t": 1791835626.7294524
   }
  ],
  "window": {
@@ -189,9 +193,92 @@
  },
  "last_round": "r0075",
  "tasks": 6,
- "active": {},
+ "active": {
+  "5Di3Dd8PKn7uQbBc4WrzxkUqqvSL8QS3KVgCPSt3kzPE5KFb": {
+   "pr": null,
+   "head": "origin/main",
+   "bundle_sha256": "228a12868095f043fea7fd052034bf653f75f6a48bc1990cc74c34c88fceb627",
+   "incumbent": true
+  },
+  "5D4txntYBCZ7dAXuFDHEubK1f84LYzPjBNCtVELenfUPCQzK": {
+   "pr": 687,
+   "head": "6699b76957b05e371be1aee7ecd283e84e84f33d",
+   "bundle_sha256": "72498c13ddca418f15c543b86db54d87a98cec059cc6221b81edd3eee5a0666b",
+   "incumbent": false,
+   "was_incumbent": false,
+   "defense": false,
+   "github": "widecloud"
+  },
+  "5DPhKi77DLciQzNDr6iCZ2cD41oHcV75vLdf82d3crVnERN6": {
+   "pr": 688,
+   "head": "524f0a8bbf685db69c808519427b0070b7e9f301",
+   "bundle_sha256": "c11e0161a3063ca108cedcca39bb162f6ad59baa9cab08512b118b7ed5c3ada4",
+   "incumbent": false,
+   "was_incumbent": false,
+   "defense": false,
+   "github": "kaivaryn"
+  },
+  "5Et8zmN8dq4eFvy7grf2fqtf5PE2mgngTdr1WA6ADJJUUCrE": {
+   "pr": 689,
+   "head": "70ca1c00c540259b646aa4ac3944b5910f6a4229",
+   "bundle_sha256": "c61384983d750d321c4dca8c3458e9bb63502004adf15c2646d5ec52ec778792",
+   "incumbent": false,
+   "was_incumbent": false,
+   "defense": false,
+   "github": "ismayilovibadet802-svg"
+  },
+  "5CoTfEgMhZ46ETtT6RSdt3RQkXizYu3vy9Spg33qTSt3eBtQ": {
+   "pr": 690,
+   "head": "9a72326e818f6bab10b11da1d049397b8986fa9a",
+   "bundle_sha256": "2859f39e0e0cce4aeba6a096b9e0673114eb1f6e70729b03349ff7db57c3e67c",
+   "incumbent": false,
+   "was_incumbent": false,
+   "defense": false,
+   "github": "dato-bitar"
+  },
+  "5E4iMWRACSJrnbnCLNVfWXjHc5VRkgzRfaAzBiB1VXfkqPUg": {
+   "pr": 691,
+   "head": "79744369bc65467a95fdc99112bd520c314f9e63",
+   "bundle_sha256": "b29d6adb20712721d9cb5875fb919e2c33dab71737cf2707c039857a05e6749e",
+   "incumbent": false,
+   "was_incumbent": false,
+   "defense": false,
+   "github": "Tet-9"
+  },
+  "5Dh9YpJeTYKmgh9weSH9j24AtgEwVWoW37xsXakYGcpqVbKJ": {
+   "pr": 692,
+   "head": "d3ac81f53e6ee7de6efda555c7a1975614a323fc",
+   "bundle_sha256": "8a77193234879d532c0bf9abc1474a5483083267bb5a2f03869336ed11df4aa8",
+   "incumbent": false,
+   "was_incumbent": false,
+   "defense": false,
+   "github": "e11734937-beep"
+  },
+  "5C5JKnm8M8pyn6neLqwmAKZ7DoyzJf7ZB1Mabv62LwfSEsHh": {
+   "pr": 693,
+   "head": "06b59137a61cbaa62583badf6c06482e91fd7489",
+   "bundle_sha256": "492439047596895b3fc4552729fe8de0c4205c94ed6470f73ac848e75ca59964",
+   "incumbent": false,
+   "was_incumbent": false,
+   "defense": false,
+   "github": "kaivexa"
+  },
+  "5EwAJCVFUV1UwBqQpT7JqcEGSGBsM3gwxiJNehTeVKqKqkqc": {
+   "pr": 694,
+   "head": "7ab82eed657e9c22a34d6430098575534a8b3796",
+   "bundle_sha256": "e61a81236029182ddb2cc85955e7c8dc81eef7b8d7eb384097acf1f241d51e30",
+   "incumbent": false,
+   "was_incumbent": false,
+   "defense": false,
+   "github": "K-3-LT"
+  }
+ },
  "rejected": {},
- "progress": {},
+ "progress": {
+  "done": 0,
+  "total": 0,
+  "by_surface": {}
+ },
  "crown": null,
  "scores": null,
  "queue": [
