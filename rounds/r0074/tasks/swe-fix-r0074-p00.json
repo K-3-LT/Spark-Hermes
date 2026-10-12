@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0074-p00",
+ "round_id": "r0074",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nOAuth2 Client add_token method raises InsecureTransportError for HTTPS URLs\n\n#### Description\n\nWhen using the OAuth2 Client's `add_token` method with HTTPS URLs, it incorrectly raises an `InsecureTransportError` even though HTTPS is a secure transport protocol.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom oauthlib.oauth2 import WebApplicationClient\n\nclient = WebApplicationClient('client_id')\nclient.token = {'access_token': 'test_token', 'token_type': 'Bearer'}\n\n# This should work but raises InsecureTransportError\nuri, headers, body = client.add_token('https://example.com/api')\n```\n\nThe method should accept HTTPS URLs as they are secure transport, but currently throws an error for secure connections while potentially allowing insecure HTTP connections.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "oauthlib__oauthlib.1fd52536.func_basic__pk88g65g",
+  "environment": "jyangballin/swesmith.x86_64.oauthlib_1776_oauthlib.1fd52536",
+  "fail_to_pass": [
+   "tests/oauth2/rfc6749/clients/test_base.py::ClientTest::test_add_bearer_token",
+   "tests/oauth2/rfc6749/clients/test_base.py::ClientTest::test_add_mac_token"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

@@ -1,0 +1,27 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0074-p09",
+ "round_id": "r0074",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nCallSite.has_invalid_arguments() returns incorrect results for unpacked arguments\n\n#### Description\n\nThe `has_invalid_arguments()` method in the `CallSite` class is incorrectly checking unpacked keyword arguments instead of unpacked positional arguments when determining if there are invalid arguments.\n\n#### Steps/Code to Reproduce\n\n```python\nimport astroid\n\n# Create a simple function call with unpacked arguments\ncode = \"\"\"\ndef func(*args):\n    return args\nfunc(*(1, 2, 3))\n\"\"\"\n\nmodule = astroid.parse(code)\ncall_node = list(module.nodes_of_class(astroid.Call))[0]\n\n# This should work correctly but doesn't due to the bug\nfrom astroid.arguments import CallSite\ncall_site = CallSite.from_call(call_node)\nprint(f\"Has invalid arguments: {call_site.has_invalid_arguments()}\")\n```\n\nThe method currently compares the length of positional arguments with unpacked keyword arguments instead of unpacked positional arguments, leading to incorrect validation results when dealing with starred expressions in function calls.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "pylint-dev__astroid.b114f6b5.func_basic__vhi1s4w1",
+  "environment": "jyangballin/swesmith.x86_64.pylint-dev_1776_astroid.b114f6b5",
+  "fail_to_pass": [
+   "tests/test_inference.py::ArgumentsTest::test_args",
+   "tests/test_inference.py::CallSiteTest::test_call_site_valid_arguments",
+   "tests/test_inference.py::InferenceTest::test_dict_inference"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

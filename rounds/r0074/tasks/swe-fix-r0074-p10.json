@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0074-p10",
+ "round_id": "r0074",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nDate literal function ignores target_type parameter\n\n#### Description\n\nThe `date_literal` function in the simplify optimizer is not respecting the `target_type` parameter when provided. It always returns a cast to the target_type without checking if the target_type is actually a temporal type or using the conditional logic to determine the appropriate type.\n\n#### Steps/Code to Reproduce\n\n```python\nimport sqlglot\nfrom sqlglot.optimizer.simplify import date_literal\nfrom sqlglot import expressions as exp\n\n# This should respect the target_type parameter\nresult = date_literal(\"2023-01-01\", exp.DataType.Type.TIME)\nprint(f\"Result: {result}\")\nprint(f\"Target type: {result.to.this}\")\n\n# Expected: Should use conditional logic to determine appropriate type\n# when target_type is not temporal\nresult2 = date_literal(\"2023-01-01 10:30:00\", exp.DataType.Type.VARCHAR)\nprint(f\"Result2: {result2}\")\nprint(f\"Target type2: {result2.to.this}\")\n```\n\nThe function currently always casts to the provided target_type without any validation or conditional logic, which can lead to incorrect type casting behavior.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.func_pm_ctrl_shuffle__dkugjq5q",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/test_optimizer.py::TestOptimizer::test_simplify"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

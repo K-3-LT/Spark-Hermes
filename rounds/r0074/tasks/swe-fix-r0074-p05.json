@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0074-p05",
+ "round_id": "r0074",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nGPX bounds calculation returns incorrect longitude values\n\n#### Description\n\nWhen calculating bounds for GPX track segments, the longitude min/max values are being computed incorrectly. The method appears to be mixing up the logic for determining minimum and maximum longitude values.\n\n#### Steps/Code to Reproduce\n\n```python\nimport gpxpy\n\n# Create a simple GPX with known coordinate bounds\ngpx = gpxpy.GPX()\ntrack = gpxpy.GPXTrack()\nsegment = gpxpy.GPXTrackSegment()\n\n# Add points with clear min/max values\nsegment.points.append(gpxpy.GPXTrackPoint(latitude=-12, longitude=13))\nsegment.points.append(gpxpy.GPXTrackPoint(latitude=-100, longitude=-5))\nsegment.points.append(gpxpy.GPXTrackPoint(latitude=100, longitude=-13))\n\ntrack.segments.append(segment)\ngpx.tracks.append(track)\n\nbounds = gpx.get_bounds()\nprint(f\"Min longitude: {bounds.min_longitude}\")  # Expected: -13, but gets wrong value\nprint(f\"Max longitude: {bounds.max_longitude}\")  # Expected: 13, but gets wrong value\n```\n\nThe expected longitude bounds should be min=-13, max=13, but the calculation returns incorrect values due to the logic error in the bounds computation.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tkrajina__gpxpy.09fc46b3.func_basic__ww19n2c1",
+  "environment": "jyangballin/swesmith.x86_64.tkrajina_1776_gpxpy.09fc46b3",
+  "fail_to_pass": [
+   "test.py::GPXTests::test_bounds",
+   "test.py::GPXTests::test_get_bounds_and_refresh_bounds"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}
