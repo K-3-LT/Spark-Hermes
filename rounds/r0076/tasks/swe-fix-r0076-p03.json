@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0076-p03",
+ "round_id": "r0076",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nParagraph alignment property returns None for LEFT alignment instead of WD_PARAGRAPH_ALIGNMENT.LEFT\n\n#### Description\n\nWhen accessing the `alignment` property of a paragraph that has left alignment, it returns `None` instead of the expected `WD_PARAGRAPH_ALIGNMENT.LEFT` value.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom docx import Document\nfrom docx.enum.text import WD_PARAGRAPH_ALIGNMENT\n\n# Create a document with a paragraph\ndoc = Document()\nparagraph = doc.add_paragraph(\"Test paragraph\")\n\n# Set alignment to LEFT explicitly\nparagraph.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT\n\n# Check the alignment - this should return WD_PARAGRAPH_ALIGNMENT.LEFT\nprint(f\"Expected: {WD_PARAGRAPH_ALIGNMENT.LEFT}\")\nprint(f\"Actual: {paragraph.alignment}\")\n\n# This will show the issue\nassert paragraph.alignment == WD_PARAGRAPH_ALIGNMENT.LEFT  # This fails\n```\n\nThe alignment property should consistently return the actual alignment value, including when it's set to LEFT alignment. Currently it returns `None` for LEFT alignment which breaks the expected behavior.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "python-openxml__python-docx.0cf6d71f.func_basic__87ru5s0t",
+  "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f",
+  "fail_to_pass": [
+   "tests/text/test_paragraph.py::DescribeParagraph::it_knows_its_alignment_value[alignment_get_fixture0]",
+   "tests/text/test_paragraph.py::DescribeParagraph::it_knows_its_alignment_value[alignment_get_fixture1]"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

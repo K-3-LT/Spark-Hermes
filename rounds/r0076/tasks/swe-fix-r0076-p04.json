@@ -1,0 +1,25 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0076-p04",
+ "round_id": "r0076",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\n### Issue: Unexpected Behavior in Postgres Dialect with JSONB_CONTAINS\n\n#### Description\n\nIt seems there's an issue with the Postgres dialect when handling certain JSONB operations. Specifically, the expression `x ? y` is not being translated correctly to `JSONB_CONTAINS(x, y)` as expected. This discrepancy leads to unexpected behavior when executing queries that rely on this translation.\n\n#### Steps to Reproduce\n\n1. Use the following SQL expression in a Postgres environment:\n   ```sql\n   SELECT 'x' ? 'y';\n   ```\n2. Observe the output or error message.\n\n#### Expected Behavior\n\nThe expression should be correctly translated and executed as:\n```sql\nJSONB_CONTAINS('x', 'y')\n```\n\n#### Actual Behavior\n\nThe expression does not translate as expected, leading to incorrect query execution.\n\n#### Additional Information\n\nThis issue might affect other JSONB operations or similar expressions within the Postgres dialect. Further investigation is needed to determine the full scope of the impact.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "tobymao__sqlglot.036601ba.lm_rewrite__6dp3fzvj",
+  "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba",
+  "fail_to_pass": [
+   "tests/dialects/test_postgres.py::TestPostgres::test_postgres"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

@@ -1,0 +1,26 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0076-p02",
+ "round_id": "r0076",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nMatchClass patterns and kwd_patterns swapped in constructor\n\n#### Description\n\nWhen creating a MatchClass node, the `patterns` and `kwd_patterns` parameters are being assigned to the wrong attributes in the constructor.\n\n#### Steps/Code to Reproduce\n\n```python\nimport astroid\n\ncode = \"\"\"\nmatch x:\n    case Point2D(0, a):\n        pass\n    case Point3D(x=0, y=1, z=b):\n        pass\n\"\"\"\n\nnode = astroid.parse(code)\nmatch_node = node.body[0]\ncase1 = match_node.cases[1]\nmatch_class = case1.pattern\n\n# This should be empty since Point3D(x=0, y=1, z=b) has no positional patterns\nprint(\"patterns:\", len(match_class.patterns))  # Expected: 0, Actual: 3\n\n# This should have 3 keyword patterns\nprint(\"kwd_patterns:\", len(match_class.kwd_patterns))  # Expected: 3, Actual: 0\n```\n\nThe issue occurs when parsing match statements with class patterns that have keyword arguments. The positional patterns and keyword patterns get swapped, causing incorrect AST representation.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "pylint-dev__astroid.b114f6b5.func_basic__umvbxvbp",
+  "environment": "jyangballin/swesmith.x86_64.pylint-dev_1776_astroid.b114f6b5",
+  "fail_to_pass": [
+   "tests/test_nodes.py::TestPatternMatching::test_match_class",
+   "tests/test_nodes_lineno.py::TestLinenoColOffset::test_end_lineno_match"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}

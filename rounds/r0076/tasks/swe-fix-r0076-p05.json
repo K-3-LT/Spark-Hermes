@@ -1,0 +1,28 @@
+{
+ "schema": "sh-preview-v1",
+ "task_id": "swe-fix-r0076-p05",
+ "round_id": "r0076",
+ "family": "swe_fix",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nSchema.load() silently returns None instead of processing data\n\n#### Description\n\nWhen calling `Schema.load()` on any schema, the method returns `None` instead of processing and returning the loaded data. This affects all schema loading operations and breaks basic functionality.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom marshmallow import Schema, fields\n\nclass UserSchema(Schema):\n    name = fields.String(required=True)\n    age = fields.Integer(required=True)\n\nschema = UserSchema()\ndata = {'name': 'John', 'age': 30}\nresult = schema.load(data)\nprint(f\"Result: {result}\")  # Expected: {'name': 'John', 'age': 30}, Actual: None\n```\n\nAlso affects validation - schemas that should raise ValidationError for missing required fields don't:\n\n```python\nschema = UserSchema()\nincomplete_data = {'name': 'John'}  # missing required 'age' field\nresult = schema.load(incomplete_data)\nprint(f\"Result: {result}\")  # Expected: ValidationError, Actual: None\n```\n\nThe issue occurs with both single objects and lists of objects, and affects partial loading as well.\n</issue>\n",
+ "workdir": "/testbed",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "grading": "share of the tests the bug breaks that pass, counted only if no kept test fails",
+ "source": {
+  "dataset": "SWE-bench/SWE-smith",
+  "instance_id": "marshmallow-code__marshmallow.9716fc62.func_basic__bk8nhdcf",
+  "environment": "jyangballin/swesmith.x86_64.marshmallow-code_1776_marshmallow.9716fc62",
+  "fail_to_pass": [
+   "tests/test_fields.py::TestDictNested::test_dict_nested_partial_propagated_to_nested",
+   "tests/test_fields.py::TestListNested::test_list_nested_partial_propagated_to_nested",
+   "tests/test_fields.py::TestTupleNested::test_tuple_nested_partial_propagated_to_nested",
+   "tests/test_schema.py::test_custom_error_messages_with_inheritance"
+  ]
+ },
+ "note": "A practice bug. The round is scored on different, hidden bugs from the same repository."
+}
