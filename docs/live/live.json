@@ -1,6 +1,6 @@
 {
  "schema": "sh-live-v3",
- "updated": 1791808809.6740496,
+ "updated": 1791809038.9116805,
  "round_id": "r0074",
  "stage": "evaluate",
  "stages": [
@@ -460,6 +460,14 @@
   {
    "stage": "evaluate_local_launch",
    "t": 1791808764.6401358
+  },
+  {
+   "stage": "resume",
+   "t": 1791808993.8937979
+  },
+  {
+   "stage": "evaluate_local_launch",
+   "t": 1791808993.8958664
   }
  ],
  "window": {
@@ -717,7 +725,7 @@
  },
  "rejected": {},
  "progress": {
-  "done": 0,
+  "done": 3,
   "total": 60,
   "by_surface": {},
   "best": {}
