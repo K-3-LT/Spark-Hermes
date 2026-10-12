@@ -1,0 +1,266 @@
+{
+ "swe-fix-r0074-00": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_access_token.py::AccessTokenEndpointTest::test_check_request_token"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_access_token.py::AccessTokenEndpointTest::test_check_verifier"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_access_token.py::AccessTokenEndpointTest::test_valid_request"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_access_token.py::AccessTokenEndpointTest::test_validate_client_key"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_access_token.py::AccessTokenEndpointTest::test_validate_request_token"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_access_token.py::AccessTokenEndpointTest::test_validate_signature"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_access_token.py::AccessTokenEndpointTest::test_validate_verifier"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_request_token.py::RequestTokenEndpointTest::test_check_redirect_uri"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth1/rfc5849/endpoints/test_request_token.py::RequestTokenEndpointTest::test_validate_signature"
+    ]
+   ],
+   "assets_sha256": "68368101b4a9b14d1a52f8ee9689f8715d528749541ab56a3c49855323cad405",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "5e8e4357ee2829adc4661b8cd34db5bd9baae558f44e004b2b495828e9b0c4c2",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "oauthlib__oauthlib.1fd52536.combine_module__b7c1p4ff",
+   "environment": "jyangballin/swesmith.x86_64.oauthlib_1776_oauthlib.1fd52536"
+  }
+ },
+ "swe-fix-r0074-02": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_clone_and_smooth"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_horizontal_and_vertical_smooth_remove_extremes"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_horizontal_smooth_remove_extremes"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_moving_stopped_times"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_smooth_without_removing_extreemes_preserves_point_count_2"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_smooth_without_removing_extreemes_preserves_point_count_3"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_vertical_smooth_remove_extremes"
+    ]
+   ],
+   "assets_sha256": "7cd8800bad8ba5c2ce1e0b694af5371d8f62ff7b4eab97a60c5b605ca180758b",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "9961e7b93efd3c5a3cd4664ede0dc3891a2d07bd49bb3bc9bafa8cdd6854eae4",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tkrajina__gpxpy.09fc46b3.func_pm_remove_assign__ltki7a4w",
+   "environment": "jyangballin/swesmith.x86_64.tkrajina_1776_gpxpy.09fc46b3"
+  }
+ },
+ "swe-fix-r0074-03": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_diagnostics_database.py::CanToolsDiagnosticsDatabaseTest::test_be_cdd_add"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_diagnostics_database.py::CanToolsDiagnosticsDatabaseTest::test_be_example_cdd"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_diagnostics_database.py::CanToolsDiagnosticsDatabaseTest::test_be_example_cdd_repr"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_diagnostics_database.py::CanToolsDiagnosticsDatabaseTest::test_datarefs"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_diagnostics_database.py::CanToolsDiagnosticsDatabaseTest::test_le_cdd_add"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_diagnostics_database.py::CanToolsDiagnosticsDatabaseTest::test_le_example_cdd"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_diagnostics_database.py::CanToolsDiagnosticsDatabaseTest::test_le_example_cdd_repr"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_diagnostics_database.py::CanToolsDiagnosticsDatabaseTest::test_unknown_byteorder"
+    ]
+   ],
+   "assets_sha256": "5af46b1a4fc05d0f8396216c2fac80537303efeaeeda9d677159c1c0be480490",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "642bc6b286e7b91d08e500dfb37dd496578bb914b0c8b6c0ebec8663e3ae7927",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "cantools__cantools.0c6a7871.combine_module__57e0a55q",
+   "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871"
+  }
+ },
+ "swe-fix-r0074-05": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_clone_and_smooth"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_horizontal_and_vertical_smooth_remove_extremes"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_horizontal_smooth_remove_extremes"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_moving_stopped_times"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_smooth_without_removing_extreemes_preserves_point_count"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_smooth_without_removing_extreemes_preserves_point_count_2"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_smooth_without_removing_extreemes_preserves_point_count_3"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "test.py::GPXTests::test_vertical_smooth_remove_extremes"
+    ]
+   ],
+   "assets_sha256": "14b9b215cb5d237c777e9cc60fc90e0de1e5f52f5ff360a3954a92beedec199c",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "3b4eac9989cd2fc51f86d525a11d32614e39409632e25bd1b082bd12927c3a68",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tkrajina__gpxpy.09fc46b3.func_pm_remove_assign__eje3hq2j",
+   "environment": "jyangballin/swesmith.x86_64.tkrajina_1776_gpxpy.09fc46b3"
+  }
+ },
+ "swe-fix-r0074-09": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_builder.py::test_parse_module_with_invalid_type_comments_does_not_crash"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_nodes.py::test_type_comments_invalid_function_comments"
+    ]
+   ],
+   "assets_sha256": "7dcb4b122b33f5eadcf97d1e2588d842629b568f0adc216887914c9ea76793fe",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "350a5044d131b6681fb50328b62ab6f3766eb2b7529f84df50234583e5945aaf",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "pylint-dev__astroid.b114f6b5.pr_2583",
+   "environment": "jyangballin/swesmith.x86_64.pylint-dev_1776_astroid.b114f6b5"
+  }
+ },
+ "swe-fix-r0074-10": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_snowflake.py::TestSnowflake::test_flatten"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_snowflake.py::TestSnowflake::test_snowflake"
+    ]
+   ],
+   "assets_sha256": "43577d6fde3d59e618bdfb37812ec4f48031466987e8e30d37fb7ab77cbc236d",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "481ef683e28ae33449436c17974526cc3fa7cbd7b071201f4a7d50f870ef16e0",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.lm_rewrite__rvaj1c2j",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ }
+}
