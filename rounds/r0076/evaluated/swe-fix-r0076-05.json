@@ -1,0 +1,45 @@
+{
+ "schema": "sh-instance-v2",
+ "task_id": "swe-fix-r0076-05",
+ "family": "swe_fix",
+ "behaviour": "act",
+ "round_id": "r0076",
+ "prompt": "The repository at /testbed has a bug, described below. Fix it by changing the source code; do not modify or\nadd tests. When you are done, the project's existing test suite should pass.\n\n<issue>\nDecimal field returns negative values and doesn't validate special values properly\n\n#### Description\n\nThe Decimal field is behaving unexpectedly - it's returning negative values for positive inputs and not properly validating special numeric values like NaN and Infinity.\n\n#### Steps/Code to Reproduce\n\n```python\nfrom marshmallow import fields\nimport decimal\n\n# Create a decimal field\nfield = fields.Decimal()\n\n# This should return Decimal('12') but returns Decimal('-12')\nresult = field.deserialize(12)\nprint(f\"Expected: Decimal('12'), Got: {result}\")\n\n# Special values should raise ValidationError but don't\nfield2 = fields.Decimal(places=2)\ntry:\n    result2 = field2.deserialize('NaN')\n    print(f\"NaN deserialization should fail but got: {result2}\")\nexcept Exception as e:\n    print(f\"NaN validation error: {e}\")\n\ntry:\n    result3 = field2.deserialize('Infinity')  \n    print(f\"Infinity deserialization should fail but got: {result3}\")\nexcept Exception as e:\n    print(f\"Infinity validation error: {e}\")\n```\n\nThe field is also not raising proper validation errors for invalid decimal strings - instead of getting \"Not a valid number.\" error messages, it seems to be returning 0 for invalid operations.\n</issue>\n",
+ "fixture": {},
+ "setup_commands": [],
+ "protected_paths": [
+  "pyproject.toml",
+  "tests/__init__.py",
+  "tests/base.py",
+  "tests/conftest.py",
+  "tests/foo_serializer.py",
+  "tests/mypy_test_cases/test_validation_error.py",
+  "tests/test_decorators.py",
+  "tests/test_error_store.py",
+  "tests/test_exceptions.py",
+  "tests/test_fields.py",
+  "tests/test_options.py",
+  "tests/test_registry.py",
+  "tests/test_serialization.py",
+  "tests/test_utils.py",
+  "tests/test_validate.py",
+  "tests/test_version_attributes.py",
+  "tox.ini"
+ ],
+ "commands": [],
+ "published": {
+  "predicates": []
+ },
+ "withheld_commitment": "hmac-sha256:db74a0add37d8e5bb5c98d80070c9768bbb1cdd8a62bc1f02b69e8c962954293",
+ "image": "swe-task:6992cf855f27992a",
+ "network": "none",
+ "tools": [
+  "terminal",
+  "file"
+ ],
+ "workdir": "/testbed",
+ "max_turns": 100,
+ "timeout_s": 1800,
+ "token_budget": 600000,
+ "requires_self_check": false
+}

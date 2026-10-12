@@ -1,0 +1,206 @@
+{
+ "swe-fix-r0076-00": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_bad_message_name"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_enable_disable"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_expect"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_flush_input"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_on_message"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_periodic_message_modify_signal_before_start"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_send"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_send_with_scaling"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_tester.py::CanToolsTesterTest::test_set_and_get_signals"
+    ]
+   ],
+   "assets_sha256": "517a699d666f525774b55a0374449d8299b3c0948e7ec8f2eab6a6e63b12b532",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "4fe191befcd85d9d853cd6bf79583ea42c617753d09e25673b3032f1cc8bdbd0",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "cantools__cantools.0c6a7871.func_pm_ctrl_shuffle__cd4jsy0h",
+   "environment": "jyangballin/swesmith.x86_64.cantools_1776_cantools.0c6a7871"
+  }
+ },
+ "swe-fix-r0076-01": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/oauth2/rfc6749/clients/test_web_application.py::WebApplicationClientTest::test_prepare_request_body"
+    ]
+   ],
+   "assets_sha256": "f131d45787fe86926f30b84a3f5ec49f86854264e9f33bf99515f5ca2f5d24ab",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "96fd73c6f9caa4bbf78e43b68516b067144027b9ce6fab305b2dc58a2941dccd",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "oauthlib__oauthlib.1fd52536.lm_rewrite__c0hjbwnd",
+   "environment": "jyangballin/swesmith.x86_64.oauthlib_1776_oauthlib.1fd52536"
+  }
+ },
+ "swe-fix-r0076-02": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_scoped_nodes.py::ClassNodeTest::test_mro_with_factories"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_scoped_nodes.py::ClassNodeTest::test_type_three_arguments"
+    ]
+   ],
+   "assets_sha256": "08abcaecef588aacc47216b061cefe5b83ed45a7e19fd98d048a027818c70b37",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "27916b680c2814d89907e867a01393c0b25878aba0791a221eee6e8f70ae09e7",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "pylint-dev__astroid.b114f6b5.func_pm_ctrl_shuffle__6m3144vw",
+   "environment": "jyangballin/swesmith.x86_64.pylint-dev_1776_astroid.b114f6b5"
+  }
+ },
+ "swe-fix-r0076-03": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/styles/test_styles.py::DescribeStyles::it_can_get_the_default_style_for_a_type[default_fixture0]"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/styles/test_styles.py::DescribeStyles::it_can_get_the_default_style_for_a_type[default_fixture1]"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/styles/test_styles.py::DescribeStyles::it_can_get_the_default_style_for_a_type[default_fixture2]"
+    ]
+   ],
+   "assets_sha256": "1e203b4f481c26c155f530a17ecd9c73f17daddde86d462e076aec650a410ed8",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "3b9c02466495f2b7999dc32d0af11be2ef9d261df7872b821f6e9c2b04c3317a",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "python-openxml__python-docx.0cf6d71f.func_pm_ctrl_shuffle__bc8gr6mb",
+   "environment": "jyangballin/swesmith.x86_64.python-openxml_1776_python-docx.0cf6d71f"
+  }
+ },
+ "swe-fix-r0076-04": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/dialects/test_bigquery.py::TestBigQuery::test_bigquery"
+    ]
+   ],
+   "assets_sha256": "8141804f13c462208b13f2e416aaf59803ad05de7d9fd888bbec35443e1c6acf",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "795265c60462214824312edd7c158180d4d3988083493b668c2b124b6611c6a1",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "tobymao__sqlglot.036601ba.func_pm_remove_cond__m7o1jzpd",
+   "environment": "jyangballin/swesmith.x86_64.tobymao_1776_sqlglot.036601ba"
+  }
+ },
+ "swe-fix-r0076-05": {
+  "withheld": {
+   "predicates": [
+    [
+     "custom",
+     "swe_test",
+     "tests/test_deserialization.py::TestFieldDeserialization::test_decimal_field_deserialization"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_deserialization.py::TestFieldDeserialization::test_decimal_field_deserialization_string"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_deserialization.py::TestFieldDeserialization::test_decimal_field_special_values"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_deserialization.py::TestFieldDeserialization::test_decimal_field_special_values_not_permitted"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_deserialization.py::TestFieldDeserialization::test_decimal_field_with_places"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_deserialization.py::TestFieldDeserialization::test_decimal_field_with_places_and_rounding"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_deserialization.py::TestFieldDeserialization::test_structured_dict_key_value_deserialization"
+    ],
+    [
+     "custom",
+     "swe_test",
+     "tests/test_schema.py::test_custom_error_message"
+    ]
+   ],
+   "assets_sha256": "2333178f99b70bc77a3d43ae4d3052383a4913046da2ee02faf58e17c65bbf70",
+   "checks_sha256": "403d3351fb14b2b302689c398daf0d6d3d2c240cf4f57276e5184634be68f0b2"
+  },
+  "salt": "1e1cbc52d4eaba4fbd5b0fd19c8f345db368f66297107d5f5aab320156a13a60",
+  "source": {
+   "dataset": "SWE-bench/SWE-smith",
+   "instance_id": "marshmallow-code__marshmallow.9716fc62.func_basic__9qtb0vsu",
+   "environment": "jyangballin/swesmith.x86_64.marshmallow-code_1776_marshmallow.9716fc62"
+  }
+ }
+}
